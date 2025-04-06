@@ -1,0 +1,82 @@
+{
+  "common": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "myAccount": "My Account",
+    "cart": "Cart",
+    "search": "Search",
+    "products": "Products",
+    "categories": "Categories",
+    "price": "Price",
+    "currency": "PLN",
+    "viewAllProducts": "View all products",
+    "allRightsReserved": "All rights reserved."
+  },
+  "home": {
+    "title": "Welcome to Lutkowo",
+    "subtitle": "Handmade crafts made with love",
+    "featuredProducts": "Featured Products",
+    "newArrivals": "New Arrivals",
+    "shopNow": "Shop Now"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "description": "Description",
+    "relatedProducts": "Related Products",
+    "details": "Product Details",
+    "noProductsFound": "No products found"
+  },
+  "cart": {
+    "yourCart": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout",
+    "total": "Total",
+    "remove": "Remove"
+  },
+  "contact": {
+    "getInTouch": "Get in Touch",
+    "name": "Full Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "thankYou": "Thank you for your message. We will respond as soon as possible."
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "products": "Manage Products",
+    "orders": "Orders",
+    "customers": "Customers",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "productName": "Product Name",
+    "productDescription": "Product Description",
+    "productPrice": "Price",
+    "productCategory": "Category",
+    "productImages": "Images",
+    "productAvailable": "Available",
+    "productFeatured": "Featured",
+    "save": "Save",
+    "delete": "Delete",
+    "cancel": "Cancel"
+  },
+  "about": {
+    "aboutUs": "About Us",
+    "shortDescription": "Lutkowo is a family business with a passion for craftsmanship, creating unique handmade products with attention to every detail.",
+    "readMore": "Read more"
+  }
+}

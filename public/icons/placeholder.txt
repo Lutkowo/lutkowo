@@ -1,0 +1,9 @@
+This directory will contain PWA icons. 
+You'll need to add actual icon files here with the following dimensions:
+- icon-64x64.png
+- icon-120x120.png
+- icon-144x144.png
+- icon-152x152.png
+- icon-192x192.png
+- icon-384x384.png
+- icon-512x512.png

@@ -1,0 +1,5 @@
+This directory will contain image assets for the website.
+Required images:
+- about-placeholder.jpg
+- product-placeholder.jpg
+- hero-bg.jpg

@@ -1,0 +1,41 @@
+{
+  "name": "lutkowo",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host --port 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "@nuxtjs/i18n": "^8.0.0-beta.12",
+    "@pinia/nuxt": "^0.4.11",
+    "@stripe/stripe-js": "^1.54.2",
+    "firebase": "^10.4.0",
+    "pinia": "^2.1.6",
+    "sass": "^1.66.1",
+    "vuetify": "^3.3.15"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.0.0-rc.1",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nuxt": "^3.7.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}

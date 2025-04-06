@@ -1,0 +1,85 @@
+{
+  "common": {
+    "home": "Strona główna",
+    "shop": "Sklep",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "logout": "Wyloguj się",
+    "myAccount": "Moje konto",
+    "cart": "Koszyk",
+    "search": "Szukaj",
+    "products": "Produkty",
+    "categories": "Kategorie",
+    "price": "Cena",
+    "currency": "zł",
+    "viewAllProducts": "Zobacz wszystkie produkty",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone."
+  },
+  "home": {
+    "title": "Witaj w Lutkowo",
+    "subtitle": "Ręcznie robione rękodzieło z miłością",
+    "featuredProducts": "Polecane produkty",
+    "newArrivals": "Nowości",
+    "shopNow": "Kup teraz"
+  },
+  "product": {
+    "addToCart": "Dodaj do koszyka",
+    "outOfStock": "Brak w magazynie",
+    "description": "Opis",
+    "relatedProducts": "Podobne produkty",
+    "details": "Szczegóły produktu",
+    "noProductsFound": "Nie znaleziono produktów"
+  },
+  "cart": {
+    "yourCart": "Twój koszyk",
+    "empty": "Twój koszyk jest pusty",
+    "continueShopping": "Kontynuuj zakupy",
+    "checkout": "Do kasy",
+    "total": "Razem",
+    "remove": "Usuń"
+  },
+  "contact": {
+    "getInTouch": "Skontaktuj się z nami",
+    "name": "Imię i nazwisko",
+    "email": "Email",
+    "message": "Wiadomość",
+    "send": "Wyślij",
+    "thankYou": "Dziękujemy za wiadomość. Odpowiemy najszybciej jak to możliwe."
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "haveAccount": "Masz już konto?"
+  },
+  "admin": {
+    "dashboard": "Panel administracyjny",
+    "products": "Zarządzaj produktami",
+    "orders": "Zamówienia",
+    "customers": "Klienci",
+    "addProduct": "Dodaj produkt",
+    "editProduct": "Edytuj produkt",
+    "productName": "Nazwa produktu",
+    "productDescription": "Opis produktu",
+    "productPrice": "Cena",
+    "productCategory": "Kategoria",
+    "productImages": "Zdjęcia",
+    "productAvailable": "Dostępny",
+    "productFeatured": "Polecany",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "cancel": "Anuluj"
+  },
+  "about": {
+    "aboutUs": "O nas",
+    "shortDescription": "Lutkowo to rodzinna firma z pasją do rękodzieła, tworząca unikalne produkty ręcznie robione z dbałością o każdy detal.",
+    "readMore": "Czytaj więcej",
+    "storyParagraph1": "Lutkowo to rodzinna firma z pasją do rękodzieła, założona w 2023 roku. Nasza przygoda rozpoczęła się od małego hobby, które z czasem przekształciło się w coś więcej.",
+    "storyParagraph2": "Każdy produkt, który oferujemy, jest tworzony ręcznie z dbałością o najdrobniejsze szczegóły. Używamy tylko najlepszych materiałów, aby tworzyć unikalne przedmioty, które będą służyć przez lata.",
+    "storyParagraph3": "Naszą misją jest łączenie tradycyjnych technik rzemieślniczych z nowoczesnymi wzorami, tworząc tym samym przedmioty, które są zarówno funkcjonalne, jak i piękne."
+  }
+}
