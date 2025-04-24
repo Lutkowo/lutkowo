@@ -1,0 +1,25 @@
+# Katalogi
+node_modules/
+.nuxt/
+.output/
+dist/
+coverage/
+
+# Pliki cache
+.eslintcache
+.stylelintcache
+*.log*
+
+# Pliki lokalne
+.DS_Store
+.env.local
+.env.*.local
+
+# Pliki IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

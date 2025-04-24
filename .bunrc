@@ -1,0 +1,14 @@
+{
+  "install": {
+    "exact": true,
+    "production": false,
+    "cache": true
+  },
+  "build": {
+    "minify": true,
+    "target": "browser"
+  },
+  "typescript": {
+    "typecheck": true
+  }
+}
