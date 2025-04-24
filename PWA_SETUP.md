@@ -271,7 +271,7 @@ lutkowo/
       - [ ] Dodanie logowania przez Google/Facebook (opcjonalnie)
       - [🔄] Implementacja resetowania hasła
       - [🔄] Weryfikacja adresu email
-      - [🔄] Zabezpieczenie chronionych tras w aplikacji
+      - [x] Zabezpieczenie chronionych tras w aplikacji
 
    2. **Profile użytkowników**:
 
@@ -299,10 +299,10 @@ lutkowo/
    - ❌ Zarządzanie zamówieniami
    - ❌ Konfiguracja uprawnień
 
-6. **Faza 6: Optymalizacja i PWA** (4 tygodnie) ❌
-   - ❌ Optymalizacja wydajności
-   - ❌ Implementacja PWA
-   - ❌ Testy i bugfixy
+6. **Faza 6: Optymalizacja i PWA** (4 tygodnie) 🔄
+   - [x] Optymalizacja wydajności (częściowo)
+   - [🔄] Implementacja PWA (w trakcie)
+   - [x] Podstawowe testy i bugfixy
 
 Legenda:
 
@@ -342,7 +342,7 @@ Legenda:
    - [ ] Dodanie logowania przez Google/Facebook (opcjonalnie)
    - [🔄] Implementacja resetowania hasła
    - [🔄] Weryfikacja adresu email
-   - [🔄] Zabezpieczenie chronionych tras w aplikacji
+   - [x] Zabezpieczenie chronionych tras w aplikacji
 
 2. **Profile użytkowników**:
 
@@ -358,22 +358,58 @@ Legenda:
    - [ ] Dodanie podstawowego dashboardu
    - [ ] Przygotowanie struktury do zarządzania produktami
 
+### Faza 6: Optymalizacja i PWA (w trakcie) 🔄
+
+1. **Optymalizacja wydajności**:
+
+   - [x] Refaktoryzacja kodu i usunięcie zbędnych plików
+   - [x] Bezpieczne zarządzanie kluczami API i zmiennymi środowiskowymi
+   - [x] Poprawa obsługi błędów podczas inicjalizacji Firebase
+   - [x] Implementacja obsługi wielojęzyczności bez błędów formatowania
+   - [🔄] Optymalizacja czasu ładowania strony
+   - [ ] Optymalizacja obrazów i zasobów statycznych
+
+2. **Implementacja PWA**:
+
+   - [x] Dodanie podstawowych stron aplikacji (regulamin, polityka prywatności, informacje o dostawie)
+   - [🔄] Przygotowanie manifest.json i konfiguracji service worker
+   - [ ] Testowanie funkcji instalacji aplikacji (A2HS)
+   - [ ] Implementacja powiadomień push
+
+3. **Testy i bugfixy**:
+   - [x] Naprawa błędów inicjalizacji Firebase
+   - [x] Naprawa błędów formatowania w wielojęzyczności
+   - [x] Usprawnienie procesu inicjalizacji aplikacji
+   - [🔄] Testy kompatybilności z różnymi przeglądarkami
+   - [ ] Testy wydajnościowe i user experience
+
+### Zrealizowane zadania (25.04.2025):
+
+1. **Bezpieczeństwo i konfiguracja**:
+
+   - [x] Przeniesienie kluczy Firebase do zmiennych środowiskowych
+   - [x] Utworzenie pliku .env.example jako wzoru dla konfiguracji
+   - [x] Usprawnienie mechanizmu inicjalizacji Firebase
+   - [x] Implementacja bezpiecznej obsługi błędów w przypadku braku konfiguracji Firebase
+
+2. **UI i funkcjonalność**:
+
+   - [x] Utworzenie brakujących stron: shipping.vue, privacy-policy.vue, terms.vue
+   - [x] Dodanie tłumaczeń dla nowych stron w plikach i18n
+   - [x] Naprawa błędów formatowania w plikach tłumaczeń
+   - [x] Usunięcie zbędnych plików i folderów przed wdrożeniem
+
+3. **Optymalizacja**:
+   - [x] Usprawnienie kolejności inicjalizacji komponentów aplikacji
+   - [x] Poprawa zarządzania pluginami i providersami w Nuxt
+
 ### Kolejne kroki (Faza 4)
 
-Po ukończeniu Fazy 2 i 3, przejdziemy do implementacji:
+Po ukończeniu Fazy 3 i rozpoczętych pracach z Fazy 6, przejdziemy do implementacji:
 
 1. Integracji Stripe
 2. Procesu checkout
 3. Systemu zamówień
-
-### Zalecany porządek prac
-
-1. Najpierw dokończ Fazę 2 - funkcje produktowe, które są sercem sklepu
-2. Następnie przejdź do systemu logowania i rejestracji z Fazy 3
-3. W dalszej kolejności zajmij się profilami użytkowników
-4. Na końcu przygotuj podstawy panelu administracyjnego
-
-Każdy punkt z powyższej listy może być traktowany jako osobne zadanie, które można śledzić i realizować krok po kroku.
 
 ## Future Considerations
 

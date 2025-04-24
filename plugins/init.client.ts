@@ -9,35 +9,35 @@ export default defineNuxtPlugin((nuxtApp) => {
     console.log('🚀 Aplikacja Lutkowo została uruchomiona!');
 
     // Sprawdź, czy Firebase zostało zainicjalizowane
-    const firebase = nuxtApp.$firebase;
-    const firebaseError = nuxtApp.$firebaseError;
+    const firebase=nuxtApp.$firebase;
+    const firebaseError=nuxtApp.$firebaseError;
 
     // Inicjalizacja tylko gdy Firebase jest dostępne
-    if (firebase && !firebaseError) {
+    if(firebase&&!firebaseError) {
       console.log('📱 Inicjalizacja store\'ów aplikacji');
-      
+
       // Inicjalizacja store'a autoryzacji
-      const authStore = useAuthStore();
+      const authStore=useAuthStore();
       authStore.init();
 
       // Inicjalizacja store'a koszyka
-      const cartStore = useCartStore();
+      const cartStore=useCartStore();
       cartStore.initCart();
 
       // Pobieranie produktów
-      const productsStore = useProductsStore();
+      const productsStore=useProductsStore();
       setTimeout(() => {
         productsStore.fetchProducts();
       }, 100); // Małe opóźnienie aby nie blokować hydratacji
 
       // Uruchamiamy okresowe odświeżanie listy produktów co 5 minut
       // aby utrzymać aktualne dane (dostępność, ceny)
-      const { pause, resume } = useIntervalFn(() => {
+      const { pause, resume }=useIntervalFn(() => {
         // Odświeżamy produkty tylko jeśli strona jest aktywna
-        if (document.visibilityState === 'visible') {
+        if(document.visibilityState==='visible') {
           productsStore.fetchProducts();
         }
-      }, 5 * 60 * 1000); // 5 minut
+      }, 5*60*1000); // 5 minut
 
       // Automatycznie zatrzymujemy odświeżanie, gdy użytkownik opuszcza stronę
       usePageLeave(() => {
@@ -46,7 +46,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       // Nasłuchujemy na zmiany widoczności strony
       window.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
+        if(document.visibilityState==='visible') {
           resume();
         } else {
           pause();
