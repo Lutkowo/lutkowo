@@ -1,9 +1,0 @@
-// To jest plik zastępczy dla obrazu kategorii ceramiki.
-// Zalecany obraz:
-// - Wysokiej jakości zdjęcie ceramiki
-// - Rozmiar: 600x400px
-// - Format: JPG lub WEBP
-//
-// Źródło przykładowe:
-// https://unsplash.com/photos/three-white-ceramic-pots-on-white-surface-bBiuSdck8tU
-// Autor: Tom Crew

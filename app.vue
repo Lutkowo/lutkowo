@@ -18,7 +18,7 @@
 
 import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
-import { useSeoMeta } from "@unhead/vue";
+import { useSeoMeta } from "#imports";
 
 // Pobieramy tłumaczenia
 const { t, locale } = useI18n();

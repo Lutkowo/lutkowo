@@ -1,9 +1,0 @@
-// To jest plik zastępczy dla obrazu kategorii makram.
-// Zalecany obraz:
-// - Wysokiej jakości zdjęcie makram
-// - Rozmiar: 600x400px
-// - Format: JPG lub WEBP
-//
-// Źródło przykładowe:
-// https://unsplash.com/photos/white-and-brown-rope-on-white-surface-Oaqk7qqNh_c
-// Autor: Annie Spratt

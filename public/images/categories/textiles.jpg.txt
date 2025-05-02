@@ -1,9 +1,0 @@
-// To jest plik zastępczy dla obrazu kategorii tekstyliów.
-// Zalecany obraz:
-// - Wysokiej jakości zdjęcie lnianych lub bawełnianych tekstyliów
-// - Rozmiar: 600x400px
-// - Format: JPG lub WEBP
-//
-// Źródło przykładowe:
-// https://unsplash.com/photos/brown-wooden-table-with-white-tablecloth-9rYfG8sWRVo
-// Autor: Conscious Design

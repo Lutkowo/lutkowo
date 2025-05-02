@@ -1,9 +1,0 @@
-// To jest plik zastępczy dla obrazu w sekcji "O nas".
-// Zalecany obraz:
-// - Wysokiej jakości zdjęcie przedstawiające proces tworzenia ceramiki, np. osobę pracującą przy kole ceramicznym
-// - Rozmiar: 1000x800px lub proporcjonalny
-// - Format: JPG lub WEBP
-//
-// Źródło przykładowe:
-// https://unsplash.com/photos/persons-hand-forming-clay-pot-PMOoYfLGwJ4
-// Autor: Quang Nguyen Vinh

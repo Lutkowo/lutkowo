@@ -1,9 +1,0 @@
-// To jest plik zastępczy dla obrazu ceramicznego wazonu.
-// Zalecany obraz:
-// - Wysokiej jakości zdjęcie ceramicznego wazonu
-// - Rozmiar: 600x600px (format kwadratowy)
-// - Format: JPG lub WEBP
-//
-// Źródło przykładowe:
-// https://unsplash.com/photos/white-ceramic-vase-sMGTveIE8-0
-// Autor: Oriento
