@@ -1,0 +1,9 @@
+// To jest plik zastępczy dla obrazu szklanej miseczki.
+// Zalecany obraz:
+// - Wysokiej jakości zdjęcie szklanej miseczki
+// - Rozmiar: 600x600px (format kwadratowy)
+// - Format: JPG lub WEBP
+//
+// Źródło przykładowe:
+// https://unsplash.com/photos/glass-bowl-beside-clear-drinking-glass-kZR5uAn_Vgk
+// Autor: Mae Mu

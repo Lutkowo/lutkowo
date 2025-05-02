@@ -1,0 +1,9 @@
+// To jest plik zastępczy dla obrazu makramy ściennej.
+// Zalecany obraz:
+// - Wysokiej jakości zdjęcie makramy ściennej
+// - Rozmiar: 600x600px (format kwadratowy)
+// - Format: JPG lub WEBP
+//
+// Źródło przykładowe:
+// https://unsplash.com/photos/beige-wall-hanging-decor-OzQIgRlj1R4
+// Autor: Anastasiia Rozumna

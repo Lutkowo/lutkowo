@@ -1,84 +1,70 @@
-# Lutkowo - Sklep z rękodziełem
+# Lutkowo
 
-Platforma e-commerce dla ręcznie wykonanych produktów (ceramika, szkło, makramy, tekstylia i drewno).
+Sklep internetowy specjalizujący się w sprzedaży ręcznie wykonanych produktów (ceramika, szkło, glina oraz makramy).
 
-## Wymagania systemowe
+## Opis projektu
 
-- Node.js 18+ (zalecane 20+)
-- [Bun](https://bun.sh/) 1.0.0+
-- Git
+Lutkowo to aplikacja PWA zbudowana na frameworku Nuxt 3, oferująca responsywny interfejs do przeglądania i zakupu unikalnych, rękodzielniczych produktów. Aplikacja wykorzystuje Firebase jako backend i hosting oraz wspiera wielojęzyczność (polski i angielski).
+
+## Funkcje
+
+- Przeglądanie produktów z podziałem na kategorie
+- Responsywny design dostosowany do urządzeń mobilnych i stacjonarnych
+- Wsparcie dla PWA (możliwość instalacji na urządzeniach)
+- Wielojęzyczność (polski i angielski)
+- Optymalizacja SEO
+- Integracja z Firebase (uwierzytelnianie, baza danych, hosting)
 
 ## Technologie
 
-- Vue.js 3.5+
-- Nuxt.js 3.16+
-- TypeScript 5.6+
-- @nuxt/ui 3.0+
-- Firebase (planowane)
-- Pinia (planowane)
-- Stripe (planowane)
+- Nuxt 3
+- Vue 3
+- TypeScript
+- Firebase
+- Pinia (zarządzanie stanem)
+- i18n (wielojęzyczność)
+- PWA
 
-## Instalacja
+## Uruchamianie projektu
 
-Upewnij się, że masz zainstalowany Bun:
+### Wymagania
 
-```bash
-# Instalacja Bun (jeśli jeszcze nie masz)
-curl -fsSL https://bun.sh/install | bash
+- Node.js 18+
+- Bun 1.0+
 
-# Lub za pomocą npm
-npm install -g bun
-```
-
-Następnie zainstaluj zależności:
+### Instalacja zależności
 
 ```bash
-# Zalecane
 bun install
 ```
 
-## Serwer developerski
-
-Uruchom serwer developerski na `http://localhost:3000`:
+### Uruchamianie w trybie deweloperskim
 
 ```bash
 bun run dev
 ```
 
-## Produkcja
-
-Zbuduj aplikację do wdrożenia produkcyjnego:
+### Budowanie wersji produkcyjnej
 
 ```bash
 bun run build
 ```
 
-Podgląd wersji produkcyjnej lokalnie:
+### Wdrażanie na Firebase
 
 ```bash
-bun run preview
-```
-
-## Lintowanie i formatowanie kodu
-
-```bash
-# Sprawdzanie kodu
-bun run lint
-
-# Automatyczna naprawa problemów
-bun run lint:fix
+bun run deploy
 ```
 
 ## Struktura projektu
 
-Projekt jest zorganizowany zgodnie z konwencjami Nuxt 3:
+- `assets/` - Pliki statyczne (CSS, obrazy)
+- `components/` - Komponenty Vue
+- `layouts/` - Layouty stron
+- `pages/` - Strony aplikacji
+- `public/` - Publiczne zasoby dostępne bezpośrednio (favicon, ikony)
+- `server/` - Funkcje serwerowe
 
-- `components/`: Komponenty Vue
-- `layouts/`: Układy aplikacji
-- `pages/`: Strony aplikacji (routing automatyczny)
-- `plugins/`: Pluginy Vue.js
-- `public/`: Zasoby publiczne
-- `stores/`: Pinia stores
-- `locales/`: Pliki tłumaczeń (i18n)
+## Dokumentacja
 
-Szczegółowa dokumentacja architektury i wymagań znajduje się w pliku [PWA_SETUP.md](./PWA_SETUP.md).
+Szczegółowy opis projektu, wymagań i funkcjonalności znajduje się w pliku [PWA_SETUP.md](./PWA_SETUP.md).

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Optymalizacja dla crawlerów
+Sitemap: https://lutkowo.pl/sitemap.xml
+
+# Blokowanie dostępu do panelu admin dla robotów
+Disallow: /admin/
+Disallow: /*?query=*

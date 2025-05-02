@@ -1,253 +1,587 @@
 <template>
-	<div>
-		<div class="py-8 md:py-16 bg-primary-50 dark:bg-gray-900">
-			<UContainer>
-				<div class="max-w-3xl mx-auto text-center mb-12">
-					<h1
-						class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
-					>
-						{{ $t("home.title") }}
-					</h1>
-					<p class="text-lg text-gray-700 dark:text-gray-300">
-						{{ $t("home.subtitle") }}
-					</p>
-					<UButton size="lg" color="primary" class="mt-8" to="/shop">
-						{{ $t("home.shopNow") }}
-					</UButton>
-				</div>
-			</UContainer>
-		</div>
+  <div class="home-page">
+    <!-- Sekcja Hero -->
+    <section class="hero-section">
+      <UContainer>
+        <div class="hero-content">
+          <h1 class="hero-title">{{ $t("home.hero.title") }}</h1>
+          <p class="hero-description">{{ $t("home.hero.description") }}</p>
+          <div class="hero-buttons">
+            <UButton size="lg" color="primary" :to="'/products'" icon="i-heroicons-shopping-bag">
+              {{ $t("home.hero.shopButton") }}
+            </UButton>
+            <UButton
+              size="lg"
+              color="gray"
+              variant="outline"
+              :to="'/about'"
+              icon="i-heroicons-information-circle"
+            >
+              {{ $t("home.hero.aboutButton") }}
+            </UButton>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Zastępczy obraz - w przyszłości zastąpić właściwym -->
+          <UImage
+            src="/images/hero-placeholder.jpg"
+            alt="Lutkowo - Ręcznie wykonane produkty"
+            width="600"
+            height="400"
+            loading="eager"
+            placeholder
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+      </UContainer>
+    </section>
 
-		<!-- Wyróżnione kategorie -->
-		<UContainer class="py-16">
-			<h2
-				class="text-2xl font-semibold text-center mb-8 text-gray-900 dark:text-white"
-			>
-				{{ $t("home.categories") }}
-			</h2>
+    <!-- Sekcja Kategorie -->
+    <section class="categories-section">
+      <UContainer>
+        <h2 class="section-title">{{ $t("home.categories.title") }}</h2>
+        <div class="categories-grid">
+          <UCard
+            v-for="(category, index) in categories"
+            :key="index"
+            class="category-card"
+            :to="`/products?category=${category.id}`"
+          >
+            <template #header>
+              <UImage
+                :src="category.image"
+                :alt="$t(`categories.${category.id}`)"
+                width="300"
+                height="200"
+                loading="lazy"
+                placeholder
+                class="category-image"
+              />
+            </template>
+            <template #footer>
+              <h3 class="category-title">{{ $t(`categories.${category.id}`) }}</h3>
+            </template>
+          </UCard>
+        </div>
+      </UContainer>
+    </section>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-				<NuxtLink
-					v-for="category in categories"
-					:key="category.id"
-					:to="`/shop/${category.id}`"
-					class="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 aspect-square"
-				>
-					<UImage
-						:src="category.image"
-						class="w-full h-full object-cover"
-						alt=""
-					/>
-					<div
-						class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center"
-					>
-						<span class="text-white text-xl font-medium">{{
-							category.name
-						}}</span>
-					</div>
-				</NuxtLink>
-			</div>
-		</UContainer>
+    <!-- Sekcja Wyróżnione Produkty -->
+    <section class="featured-section">
+      <UContainer>
+        <div class="section-header">
+          <h2 class="section-title">{{ $t("home.featured.title") }}</h2>
+          <UButton
+            color="primary"
+            variant="ghost"
+            :to="'/products'"
+            icon="i-heroicons-arrow-right"
+            iconRight
+          >
+            {{ $t("home.featured.viewAll") }}
+          </UButton>
+        </div>
+        <div class="products-grid">
+          <UCard
+            v-for="(product, index) in featuredProducts"
+            :key="index"
+            class="product-card"
+            :to="`/products/${product.id}`"
+          >
+            <template #header>
+              <div class="product-image-container">
+                <UImage
+                  :src="product.image"
+                  :alt="product.name"
+                  width="300"
+                  height="300"
+                  loading="lazy"
+                  placeholder
+                  class="product-image"
+                />
+                <UBadge v-if="product.featured" color="amber" class="featured-badge">
+                  {{ $t("product.featured") }}
+                </UBadge>
+              </div>
+            </template>
+            <template #default>
+              <h3 class="product-title">{{ product.name }}</h3>
+              <p class="product-price">{{ formatPrice(product.price) }} zł</p>
+            </template>
+            <template #footer>
+              <UButton color="primary" block icon="i-heroicons-shopping-cart">
+                {{ $t("product.addToCart") }}
+              </UButton>
+            </template>
+          </UCard>
+        </div>
+      </UContainer>
+    </section>
 
-		<!-- Wyróżnione produkty -->
-		<div class="py-16 bg-gray-50 dark:bg-gray-900">
-			<UContainer>
-				<h2
-					class="text-2xl font-semibold text-center mb-8 text-gray-900 dark:text-white"
-				>
-					{{ $t("home.featuredProducts") }}
-				</h2>
+    <!-- Sekcja O Nas -->
+    <section class="about-section">
+      <UContainer>
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">{{ $t("home.about.title") }}</h2>
+            <p class="about-description">{{ $t("home.about.description1") }}</p>
+            <p class="about-description">{{ $t("home.about.description2") }}</p>
+            <UButton
+              color="primary"
+              variant="outline"
+              :to="'/about'"
+              icon="i-heroicons-arrow-right"
+              iconRight
+            >
+              {{ $t("home.about.button") }}
+            </UButton>
+          </div>
+          <div class="about-image">
+            <UImage
+              src="/images/about-placeholder.jpg"
+              alt="O Lutkowo"
+              width="500"
+              height="350"
+              loading="lazy"
+              placeholder
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </UContainer>
+    </section>
 
-				<div v-if="productsStore.loading" class="flex justify-center my-8">
-					<UIcon
-						name="i-heroicons-arrow-path"
-						class="w-8 h-8 animate-spin text-primary-500"
-					/>
-				</div>
+    <!-- Sekcja Testimonials -->
+    <section class="testimonials-section">
+      <UContainer>
+        <h2 class="section-title">{{ $t("home.testimonials.title") }}</h2>
+        <div class="testimonials-grid">
+          <UCard
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="testimonial-card"
+            padding="lg"
+          >
+            <div class="testimonial-content">
+              <UIcon name="i-heroicons-chat-bubble-left-right" class="testimonial-icon" />
+              <p class="testimonial-text">"{{ testimonial.text }}"</p>
+              <div class="testimonial-author">
+                <strong>{{ testimonial.author }}</strong>
+              </div>
+            </div>
+          </UCard>
+        </div>
+      </UContainer>
+    </section>
 
-				<div
-					v-else-if="productsStore.error"
-					class="p-4 rounded-lg bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100 my-8"
-				>
-					{{ productsStore.error }}
-				</div>
-
-				<div
-					v-else-if="featuredProducts.length === 0"
-					class="text-center my-8 text-gray-600 dark:text-gray-400"
-				>
-					{{ $t("products.noProductsFound") }}
-				</div>
-
-				<div
-					v-else
-					class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-				>
-					<UCard
-						v-for="product in featuredProducts"
-						:key="product.id"
-						class="hover:shadow-lg transition-all duration-300"
-					>
-						<template #header>
-							<NuxtLink
-								:to="`/product/${product.id}`"
-								class="block aspect-square overflow-hidden"
-							>
-								<UImage
-									:src="product.images[0] || '/images/placeholder.jpg'"
-									class="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-									:alt="product.name"
-								/>
-							</NuxtLink>
-						</template>
-
-						<div>
-							<NuxtLink :to="`/product/${product.id}`" class="block">
-								<h3
-									class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400"
-								>
-									{{ product.name }}
-								</h3>
-							</NuxtLink>
-							<p
-								class="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2"
-							>
-								{{ product.description }}
-							</p>
-							<div class="flex justify-between items-center mt-4">
-								<span class="text-lg font-bold text-gray-900 dark:text-white">
-									{{ formatPrice(product.price) }}
-								</span>
-								<UButton
-									v-if="product.available"
-									color="primary"
-									variant="soft"
-									icon="i-heroicons-shopping-cart"
-									size="sm"
-									@click="addToCart(product)"
-								>
-									{{ $t("products.addToCart") }}
-								</UButton>
-								<UBadge v-else color="gray" class="text-xs">
-									{{ $t("products.outOfStock") }}
-								</UBadge>
-							</div>
-						</div>
-					</UCard>
-				</div>
-
-				<div class="text-center mt-12">
-					<UButton color="primary" variant="outline" to="/shop">
-						{{ $t("home.viewAllProducts") }}
-					</UButton>
-				</div>
-			</UContainer>
-		</div>
-
-		<!-- Zalety sklepu -->
-		<UContainer class="py-16">
-			<h2
-				class="text-2xl font-semibold text-center mb-12 text-gray-900 dark:text-white"
-			>
-				{{ $t("home.whyChooseUs") }}
-			</h2>
-
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="text-center">
-					<UIcon
-						name="i-heroicons-hand"
-						class="w-12 h-12 text-primary-500 mx-auto mb-4"
-					/>
-					<h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">
-						{{ $t("home.handmade") }}
-					</h3>
-					<p class="text-gray-600 dark:text-gray-400">
-						{{ $t("home.handmadeDesc") }}
-					</p>
-				</div>
-
-				<div class="text-center">
-					<UIcon
-						name="i-heroicons-globe-europe-africa"
-						class="w-12 h-12 text-primary-500 mx-auto mb-4"
-					/>
-					<h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">
-						{{ $t("home.ecofriendly") }}
-					</h3>
-					<p class="text-gray-600 dark:text-gray-400">
-						{{ $t("home.ecofriendlyDesc") }}
-					</p>
-				</div>
-
-				<div class="text-center">
-					<UIcon
-						name="i-heroicons-truck"
-						class="w-12 h-12 text-primary-500 mx-auto mb-4"
-					/>
-					<h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">
-						{{ $t("home.fastDelivery") }}
-					</h3>
-					<p class="text-gray-600 dark:text-gray-400">
-						{{ $t("home.fastDeliveryDesc") }}
-					</p>
-				</div>
-			</div>
-		</UContainer>
-
-		<div>
-			<h1>Strona główna</h1>
-			<p>Witamy w sklepie Lutkowo</p>
-		</div>
-	</div>
+    <!-- Sekcja Newsletter -->
+    <section class="newsletter-section">
+      <UContainer>
+        <div class="newsletter-container">
+          <h2 class="section-title">{{ $t("home.newsletter.title") }}</h2>
+          <p class="newsletter-description">{{ $t("home.newsletter.description") }}</p>
+          <form @submit.prevent="subscribeToNewsletter" class="newsletter-form">
+            <UFormGroup class="newsletter-input-group">
+              <UInput
+                v-model="newsletterEmail"
+                type="email"
+                :placeholder="$t('home.newsletter.placeholder')"
+                icon="i-heroicons-envelope"
+                required
+                class="newsletter-input"
+              />
+            </UFormGroup>
+            <UButton
+              type="submit"
+              color="primary"
+              :loading="isSubscribing"
+              class="newsletter-button"
+            >
+              {{ $t("home.newsletter.button") }}
+            </UButton>
+          </form>
+          <UAlert
+            v-if="showNewsletterSuccess"
+            color="green"
+            variant="soft"
+            icon="i-heroicons-check-circle"
+            :title="$t('home.newsletter.success')"
+            class="newsletter-alert"
+          />
+        </div>
+      </UContainer>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
-	import { useProductsStore } from "~/stores/products";
-	import { useCartStore } from "~/stores/cart";
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+import { useSeoMeta } from "@unhead/vue";
 
-	const { t } = useI18n();
-	const productsStore = useProductsStore();
-	const cartStore = useCartStore();
+const { t, locale } = useI18n();
 
-	// Zapewniamy, że produkty są załadowane
-	if (productsStore.products.length === 0) {
-		productsStore.fetchProducts();
-	}
+// SEO meta tagi
+useSeoMeta({
+  title: () => t("site.title"),
+  ogTitle: () => t("site.title"),
+  description: () => t("site.description"),
+  ogDescription: () => t("site.description"),
+  ogImage: "/images/og-image.jpg",
+});
 
-	// Kategorie produktów (statycznie na razie, później będą pobierane z API)
-	const categories = ref([
-		{ id: "ceramics", name: "Ceramika", image: "/images/placeholder.jpg" },
-		{ id: "glass", name: "Szkło", image: "/images/placeholder.jpg" },
-		{ id: "macrame", name: "Makramy", image: "/images/placeholder.jpg" },
-		{ id: "textiles", name: "Tekstylia", image: "/images/placeholder.jpg" },
-		{ id: "wood", name: "Drewno", image: "/images/placeholder.jpg" },
-	]);
+// Dane kategorii (mock data)
+const categories = [
+  {
+    id: "ceramics",
+    image: "/images/categories/ceramics.jpg",
+  },
+  {
+    id: "glass",
+    image: "/images/categories/glass.jpg",
+  },
+  {
+    id: "macrame",
+    image: "/images/categories/macrame.jpg",
+  },
+  {
+    id: "textiles",
+    image: "/images/categories/textiles.jpg",
+  },
+];
 
-	// Formatowanie ceny
-	function formatPrice(price: number) {
-		return new Intl.NumberFormat("pl-PL", {
-			style: "currency",
-			currency: "PLN",
-		}).format(price);
-	}
+// Dane wyróżnionych produktów (mock data)
+const featuredProducts = [
+  {
+    id: "1",
+    name: "Ceramiczny wazon",
+    price: 120,
+    image: "/images/products/vase-1.jpg",
+    featured: true,
+  },
+  {
+    id: "2",
+    name: "Szklana miseczka",
+    price: 75,
+    image: "/images/products/bowl-1.jpg",
+    featured: false,
+  },
+  {
+    id: "3",
+    name: "Makrama ścienna",
+    price: 150,
+    image: "/images/products/macrame-1.jpg",
+    featured: true,
+  },
+  {
+    id: "4",
+    name: "Lniany obrus",
+    price: 95,
+    image: "/images/products/tablecloth-1.jpg",
+    featured: false,
+  },
+];
 
-	// Dodanie produktu do koszyka
-	function addToCart(product: any) {
-		cartStore.addItem(product);
+// Dane testimonials (mock data)
+const testimonials = [
+  {
+    author: "Anna K.",
+    text: "Zakupiłam ceramiczny wazon i jest piękny! Widać dbałość o szczegóły i miłość do rzemiosła.",
+  },
+  {
+    author: "Piotr M.",
+    text: "Makrama, którą kupiłem mojej żonie na urodziny, stała się centralnym punktem naszego salonu. Jakość wykonania jest doskonała.",
+  },
+  {
+    author: "Joanna T.",
+    text: "Obsługa klienta jest na najwyższym poziomie, a produkty zachwycają jakością. Polecam wszystkim miłośnikom rękodzieła!",
+  },
+];
 
-		// Wyświetlenie komunikatu o dodaniu do koszyka
-		const { toast } = useToast();
-		toast.add({
-			title: t("cart.addedToCart"),
-			description: product.name,
-			icon: "i-heroicons-check-circle",
-			color: "primary",
-			timeout: 3000,
-		});
-	}
+// Newsletter
+const newsletterEmail = ref("");
+const isSubscribing = ref(false);
+const showNewsletterSuccess = ref(false);
 
-	// Pobieranie wyróżnionych produktów
-	const featuredProducts = computed(() => {
-		return productsStore.featuredProducts || [];
-	});
+// Funkcja pomocnicza do formatowania ceny
+const formatPrice = (price: number) => {
+  return price.toFixed(2);
+};
+
+// Funkcja do obsługi newslettera
+const subscribeToNewsletter = async () => {
+  isSubscribing.value = true;
+
+  // Tutaj w przyszłości będzie integracja z Firebase
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  isSubscribing.value = false;
+  showNewsletterSuccess.value = true;
+  newsletterEmail.value = "";
+
+  // Ukryj komunikat po 5 sekundach
+  setTimeout(() => {
+    showNewsletterSuccess.value = false;
+  }, 5000);
+};
 </script>
+
+<style scoped>
+.home-page {
+  padding-bottom: 4rem;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Featured Products Section */
+.featured-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4da6ff;
+}
+
+/* About Section */
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  height: 100%;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-icon {
+  font-size: 2rem;
+  color: #4da6ff;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  align-self: flex-end;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  padding: 4rem 0;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-description {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.newsletter-alert {
+  margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-button {
+    width: 100%;
+  }
+}
+</style>

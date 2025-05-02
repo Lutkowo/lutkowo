@@ -1,0 +1,9 @@
+// To jest plik zastępczy dla obrazu kategorii szkła.
+// Zalecany obraz:
+// - Wysokiej jakości zdjęcie produktów szklanych
+// - Rozmiar: 600x400px
+// - Format: JPG lub WEBP
+//
+// Źródło przykładowe:
+// https://unsplash.com/photos/clear-glass-bottles-on-brown-wooden-table-fMntI8HAAB8
+// Autor: Hayley Kim Design

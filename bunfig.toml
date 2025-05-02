@@ -1,0 +1,35 @@
+# Ogólna konfiguracja Bun dla projektu Lutkowo
+
+# Konfiguracja instalacji 
+[install]
+exact = true            # Instalacja dokładnych wersji pakietów (z .bunrc)
+production = false      # Nie instaluj devDependencies w trybie produkcyjnym (z .bunrc)
+types = true            # Pełne wsparcie TypeScript z generowaniem typów
+
+# Zwiększenie cache'u dla lepszej wydajności
+[install.cache]
+dir = ".bun-cache"
+disable = false
+ttl = 604800  # 7 dni w sekundach
+
+# Konfiguracja budowania
+[build]
+minify = true           # Minifikacja kodu (z .bunrc)
+target = "browser"      # Docelowa platforma (z .bunrc)
+
+# Konfiguracja TypeScript
+[typescript]
+typecheck = true        # Włączone sprawdzanie typów (z .bunrc)
+
+# Konfiguracja skryptów i optimizacje
+[run]
+no-save = true  # Szybsze uruchamianie skryptów
+
+# Konfiguracja auto completion
+[completion]
+enable = true
+
+# Konfiguracja logowania dla łatwiejszego debugowania
+[debug]
+silent = false     # Pokaż wszystkie logi podczas debugowania
+verbose = true     # Szczegółowe logi w trybie deweloperskim

@@ -4,16 +4,20 @@ node_modules/
 .output/
 dist/
 coverage/
+.bun-cache/
 
 # Pliki cache
 .eslintcache
 .stylelintcache
 *.log*
+*.tsbuildinfo
 
 # Pliki lokalne
 .DS_Store
+.env
 .env.local
 .env.*.local
+!.env.example
 
 # Pliki IDE
 .idea/
@@ -23,3 +27,7 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+
+# Pliki PWA generowane automatycznie
+public/sw.js
+public/workbox-*

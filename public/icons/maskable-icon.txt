@@ -1,0 +1,4 @@
+To jest placeholder dla maskable-icon.png.
+Ta ikona powinna być stworzona zgodnie ze specyfikacjami "maskable" dla PWA,
+co oznacza, że kluczowe elementy projektu powinny być widoczne w centralnej części,
+aby nie zostały przycięte na różnych kształtach ikon w systemie Android.

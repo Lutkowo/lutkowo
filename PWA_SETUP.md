@@ -2,33 +2,32 @@
 
 ## Overview
 
-Lutkowo to sklep internetowy specjalizujący się w sprzedaży ręcznie wykonanych produktów (ceramika, szkło, makramy, tekstylia i drewno). Platforma umożliwia przeglądanie, filtrowanie i zakup unikalnych, rękodzielniczych produktów, zapewniając responsywny interfejs dostosowany zarówno do urządzeń stacjonarnych, jak i mobilnych. Projekt implementuje pełen cykl zakupowy, od przeglądania produktów po płatności, z naciskiem na wielojęzyczność i dostępność.
+Lutkowo to sklep internetowy specjalizujący się w sprzedaży ręcznie wykonanych produktów (ceramika, szkło, glina oraz makramy). Platforma umożliwia przeglądanie i filtrowanie unikalnych, rękodzielniczych produktów, zapewniając responsywny interfejs dostosowany zarówno do urządzeń stacjonarnych, jak i mobilnych. Projekt implementuje funkcję przeglądania produktów, z naciskiem na wielojęzyczność i dostępność.
 
 ## Problem Statement
 
-Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy sprzedażowej, która:
+Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy prezentacyjnej, która:
 
 - Umożliwi eksponowanie detali i unikalności ręcznie wykonanych produktów
 - Zapewni intuicyjną nawigację i wyszukiwanie według kategorii
 - Będzie dostępna zarówno dla polsko jak i anglojęzycznych klientów
-- Zagwarantuje bezpieczne płatności i łatwy proces zakupowy
-- Dostarczy dedykowany panel administracyjny do zarządzania produktami
 - Zapewni optymalne wyświetlanie na wszystkich typach urządzeń
+- Zapewni dobrą widoczność w wyszukiwarkach poprzez optymalizację SEO
 
 ## Goals
 
-- Stworzenie responsywnej, dwujęzycznej platformy sprzedażowej
+- Stworzenie responsywnej, dwujęzycznej platformy prezentacyjnej
 - Implementacja szczegółowych widoków produktów z galeriami zdjęć
 - Wdrożenie systemu kategorii i filtrów dla łatwego wyszukiwania
 - Integracja z Firebase do przechowywania danych i autoryzacji
-- Implementacja funkcjonalności koszyka zakupowego i procesu zamówienia
-- Integracja z systemem płatności Stripe
-- Wdrożenie panelu administracyjnego do zarządzania produktami
 - Implementacja PWA dla lepszego doświadczenia na urządzeniach mobilnych
+- Wykorzystanie darmowej wersji komponentów Nuxt UI
+- Przygotowanie architektury pod przyszłą integrację z systemem płatności Stripe
 
 ## Non-Goals
 
-- Nie wdrażamy zaawansowanej analityki sprzedażowej
+- Nie implementujemy systemu koszyka i płatności w pierwszej fazie (integracja ze Stripe planowana w przyszłości)
+- Nie wdrażamy zaawansowanej analityki
 - Nie tworzymy systemu programu lojalnościowego
 - Nie integrujemy z zewnętrznymi platformami e-commerce
 - Nie implementujemy zaawansowanych funkcji rekomendacji produktów
@@ -40,11 +39,13 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy sprzedażowej, któ
 ### Frontend
 
 - **Framework**: Vue.js 3.5+ z Nuxt.js 3.16+
+- **Package Manager**: Bun
 - **Zarządzanie stanem**: Pinia (domyślny system zarządzania stanem dla Nuxt 3)
-- **UI Framework**: @nuxt/ui 3.0+
+- **UI Framework**: @nuxt/ui 3.0+ (wersja darmowa)
 - **Typescript**: Dla statycznego typowania
 - **Wielojęzyczność**: i18n (polski i angielski)
 - **Routing**: Vue Router 4.5+
+- **Image Management**: @nuxt/image 1.10.0+ (optymalizacja obrazów produktów)
 
 ### Backend
 
@@ -52,10 +53,6 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy sprzedażowej, któ
 - **Firebase Authentication**: System logowania i rejestracji
 - **Firebase Storage**: Przechowywanie zdjęć produktów
 - **Firebase Functions**: Do obsługi formularza kontaktowego
-
-### Płatności
-
-- **Stripe**: Do obsługi płatności online
 
 ### Infrastruktura
 
@@ -71,38 +68,26 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy sprzedażowej, któ
 
 ### 1. Produkty i Kategorie
 
-- Przeglądanie produktów z podziałem na kategorie (ceramika, szkło, makramy, tekstylia, drewno)
+- Przeglądanie produktów z podziałem na kategorie (ceramika, szkło, glina oraz makramy)
 - Filtrowanie produktów według ceny i kategorii
 - Sortowanie produktów według ceny, daty i nazwy
 - Szczegółowe strony produktów z galeriami zdjęć, opisami i parametrami
 - Wyświetlanie powiązanych/podobnych produktów
 
-### 2. Koszyk i Zakupy
-
-- Dodawanie produktów do koszyka
-- Modyfikacja ilości produktów w koszyku
-- Usuwanie produktów z koszyka
-- Przechowywanie stanu koszyka między sesjami (localStorage)
-- Pełen proces checkout z podsumowaniem zamówienia
-- Integracja płatności Stripe
-
-### 3. Użytkownik i Konto
+### 2. Użytkownik i Konto
 
 - Rejestracja i logowanie użytkowników przez Firebase Authentication
 - Zarządzanie profilem użytkownika
-- Historia zamówień
-- Zapisywanie adresów dostawy
 - Obsługa zapomnianych haseł
 
-### 4. Panel Administracyjny
+### 3. Panel Administracyjny
 
 - Zarządzanie produktami (dodawanie, edycja, usuwanie)
 - Upload i zarządzanie zdjęciami produktów
 - Zarządzanie kategoriami
-- Przeglądanie i zarządzanie zamówieniami
-- Podgląd podstawowych statystyk sprzedaży
+- Podgląd podstawowych statystyk
 
-### 5. Strona i Interfejs
+### 4. Strona i Interfejs
 
 - Responsywny design (mobile-first)
 - Wielojęzyczność (polski i angielski)
@@ -111,335 +96,156 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy sprzedażowej, któ
 - Wsparcie dla PWA z opcją instalacji na ekranie głównym
 - Szybkie ładowanie strony i optymalizacja obrazów z @nuxt/image
 
-### 6. Inne Funkcjonalności
+### 5. Inne Funkcjonalności
 
 - Formularz kontaktowy z obsługą przez Firebase Functions
 - Strona "O nas" z informacjami o sklepie
 - Polityka prywatności i regulamin
 
+## Timeline i Milestones
+
+### Milestone 1: Strona Startowa (✅ Zrealizowane)
+
+- Implementacja podstawowego layoutu strony głównej
+- Stworzenie podstawowej struktury projektu w Nuxt.js
+- Konfiguracja podstawowych ustawień PWA
+- Podstawowa konfiguracja i18n (polski i angielski)
+- Wdrożenie podstawowej wersji SEO
+- Pierwsza wersja responsywnego designu
+- Implementacja komponentu PWAInstallPrompt
+- Konfiguracja Firebase i zasobów niezbędnych do przyszłej integracji
+
+### Milestone 2: Katalog Produktów (przyszłe rozszerzenie)
+
+- Implementacja systemu kategorii produktów
+- Wyświetlanie listy produktów
+- Filtrowanie i sortowanie produktów
+- Integracja z Firebase dla przechowywania danych o produktach
+
+### Milestone 3: Szczegółowe Strony Produktów (przyszłe rozszerzenie)
+
+- Strony szczegółowe produktów z galeriami zdjęć
+- System wyświetlania podobnych/powiązanych produktów
+- Integracja z @nuxt/image dla optymalizacji obrazów
+- Rozbudowa funkcji SEO specyficznych dla produktów
+
+### Milestone 4: Panel Administratora (przyszłe rozszerzenie)
+
+- System logowania dla administratora
+- Zarządzanie produktami (dodawanie, edycja, usuwanie)
+- Zarządzanie kategoriami
+- Upload i zarządzanie zdjęciami produktów
+
+### Milestone 5: Funkcje Użytkownika (przyszłe rozszerzenie)
+
+- Rejestracja i logowanie użytkowników
+- Zarządzanie profilem użytkownika
+- System zapomnianych haseł
+
+### Milestone 6: System Zamówień i Płatności (przyszłe rozszerzenie)
+
+- Integracja ze Stripe dla płatności online
+- Implementacja koszyka zakupowego
+- System potwierdzania i śledzenia zamówień
+
+### Milestone 7: Rozszerzone Funkcje UI/UX (przyszłe rozszerzenie)
+
+- Implementacja trybu ciemnego (Dark Mode) z możliwością przełączania
+- Rozszerzenie opcji dostępności (a11y)
+- Zaawansowane animacje i przejścia między stronami
+- Dodatkowe ulepszenia UX oparte na feedbacku użytkowników
+
+## ToDo - Kwestie do zweryfikowania w przyszłości
+
+### Ikony PWA
+
+- Zastąpić placeholdery ikon PWA w folderze `public/icons` prawdziwymi plikami graficznymi:
+  - icon-72x72.txt → icon-72x72.png
+  - icon-192x192.txt → icon-192x192.png
+  - icon-512x512.txt → icon-512x512.png
+  - maskable-icon.txt → maskable-icon.png (z uwzględnieniem specyfikacji "maskable")
+  - apple-touch-icon.txt → apple-touch-icon.png (180x180 px)
+- Zweryfikować zgodność ikon z identyfikacją wizualną marki
+- Zoptymalizować ikony pod kątem rozmiaru plików i jakości obrazu
+
+### Obrazy produktów
+
+- Zastąpić placeholdery obrazów w folderze `public/images` prawdziwymi zdjęciami produktów
+- Zoptymalizować obrazy pod kątem wydajności ładowania (formaty WEBP, różne rozmiary)
+- Zaimplementować lazy loading dla obrazów za pomocą Nuxt Image
+- Rozważyć użycie CDN dla obrazów w przypadku większej liczby produktów
+
+### Integracja Firebase
+
+- Zaimplementować inicjalizację Firebase w middleware Nuxt
+- Skonfigurować reguły bezpieczeństwa Firestore
+- Skonfigurować reguły Storage dla przechowywania zdjęć produktów
+- Utworzyć strukturę kolekcji w Firestore dla produktów, kategorii i użytkowników
+- Zaimplementować funkcje Firebase dla formularza kontaktowego
+
 ## User Flow
+
+### Faza Początkowa (Milestone 1)
+
+1. **Odwiedzający strony startowej**:
+   - Zapoznaje się z podstawowymi informacjami o Lutkowo
+   - Przełącza między wersjami językowymi (PL/EN)
+   - Może zobaczyć przykładowe zdjęcia produktów (bez funkcji sklepu)
+   - Może przeczytać podstawowe informacje "O nas"
+   - Może zapisać się do newslettera (formularz nie jest jeszcze podpięty do backendu)
+
+### Przyszłe Fazy (Milestone 2-6)
 
 1. **Odwiedzający**:
 
    - Przegląda produkty
    - Filtruje i sortuje według preferencji
    - Przegląda szczegóły produktów
-   - Dodaje produkty do koszyka
-   - Przechodzi do procesu zakupowego
+   - Składa zamówienia (po implementacji Milestone 6)
 
-2. **Rejestracja/Logowanie**:
+2. **Rejestracja/Logowanie** (po implementacji Milestone 5):
 
    - Użytkownik może się zarejestrować lub zalogować przez Firebase Authentication
-   - Opcjonalne dla zakończenia zakupu
+   - Zarządzanie profilem i historią zamówień
 
-3. **Proces zakupowy**:
-
-   - Przegląd koszyka
-   - Wprowadzenie danych dostawy
-   - Wybór metody płatności
-   - Potwierdzenie zamówienia
-   - Płatność przez Stripe
-   - Potwierdzenie zakupu
-
-4. **Panel Administratora**:
+3. **Panel Administratora** (po implementacji Milestone 4):
    - Logowanie do panelu admin
    - Zarządzanie produktami i kategoriami
-   - Zarządzanie zamówieniami
    - Przegląd statystyk
+   - Zarządzanie zamówieniami (po implementacji Milestone 6)
 
-## Technical Requirements
+## Nowe wnioski i spostrzeżenia z procesu implementacji
 
-### 1. Performance
+### Optymalizacja wielojęzyczności (i18n)
 
-- Czas ładowania pierwszej strony poniżej 2s
-- Wykorzystanie lazy loading dla obrazów
-- Implementacja code-splitting dla optymalizacji rozmiaru paczki
-- Optymalizacja obrazów produktów z @nuxt/image
+- Organizacja kluczy tłumaczeń według sekcji strony zwiększa czytelność i łatwość utrzymania
+- Warto rozważyć dynamiczne ładowanie plików tłumaczeń dla większych aplikacji
+- Zapisywanie preferencji językowych w localStorage zapewnia spójne doświadczenie między sesjami
+- Warto rozważyć automatyczne wykrywanie języka przeglądarki przy pierwszej wizycie
 
-### 2. Security
+### Komponenty Nuxt UI
 
-- Bezpieczna autoryzacja z Firebase Authentication
-- Reguły bezpieczeństwa Firestore i Storage
-- Bezpieczne przetwarzanie płatności przez Stripe
-- Implementacja CSRF protection
-- Prawidłowa walidacja inputów
+- Biblioteka Nuxt UI dostarcza bogaty zestaw komponentów, które przyspieszają rozwój
+- Warto dostosować style komponentów do identyfikacji wizualnej marki
+- Dla zaawansowanych przypadków użycia, może być konieczne rozszerzenie lub nadpisanie funkcjonalności
 
-### 3. Scalability
+### Optymalizacja SEO
 
-- Strukturyzacja kodu dla łatwego rozszerzania
-- Modularna architektura z możliwością dodawania funkcji
-- Efektywne wykorzystanie Firebase dla skalowania bazy danych
+- Dynamiczne generowanie metatagów na podstawie treści strony
+- Wdrożenie strukturalnych danych Schema.org dla lepszej widoczności w wynikach wyszukiwania
+- Konfiguracja sitemap.xml z dynamicznym generowaniem dla nowych produktów
+- Implementacja strategii linkowania wewnętrznego między powiązanymi produktami
 
-### 4. Maintenance
+### Testowanie na różnych urządzeniach
 
-- Spójne nazewnictwo i style kodowania
-- Organizacja kodu zgodna z najlepszymi praktykami Nuxt.js
-- CI/CD do automatyzacji testów i wdrożeń
-- Konfiguracja ESLint dla utrzymania jakości kodu
+- Warto rozważyć użycie narzędzi do testowania responsywności (np. Responsively App)
+- Testowanie na prawdziwych urządzeniach daje lepsze wyniki niż symulatory
+- Warto uwzględnić różne prędkości połączeń internetowych (szczególnie dla obrazów)
+- Testowanie instalacji PWA na różnych systemach operacyjnych (iOS, Android)
 
-### 5. Compatibility
+### Wydajność aplikacji
 
-- Wsparcie dla najnowszych wersji przeglądarek (Chrome, Firefox, Safari, Edge)
-- Responsywny design dla różnych rozmiarów ekranów
-- Wsparcie PWA dla instalacji na ekranie głównym (A2HS)
-
-## Project Structure
-
-```
-lutkowo/
-├── components/           # Komponenty Vue
-│   ├── AppHeader.vue     # Header strony
-│   └── AppFooter.vue     # Footer strony
-├── layouts/              # Layouty aplikacji
-│   └── default.vue       # Domyślny layout
-├── locales/              # Pliki tłumaczeń
-│   ├── en.json           # Angielskie tłumaczenia
-│   └── pl.json           # Polskie tłumaczenia
-├── pages/                # Strony aplikacji (routing)
-│   ├── index.vue         # Strona główna
-│   ├── about.vue         # O nas
-│   ├── contact.vue       # Kontakt
-│   ├── cart.vue          # Koszyk
-│   ├── login.vue         # Logowanie
-│   ├── product/          # Strony produktów
-│   │   └── [id].vue      # Dynamiczny widok produktu
-│   └── shop/             # Sklep
-│       ├── index.vue     # Lista produktów
-│       └── [category].vue # Kategorie produktów
-├── plugins/              # Pluginy
-│   ├── firebase.client.ts # Konfiguracja Firebase
-│   ├── init.client.ts    # Inicjalizacja na kliencie
-│   └── vuetify.ts        # Konfiguracja UI (do aktualizacji na @nuxt/ui)
-├── public/               # Statyczne zasoby
-│   ├── icons/            # Ikony PWA
-│   └── images/           # Obrazy statyczne
-├── server/               # Server-side kod (SSR)
-├── stores/               # Pinia stores
-│   ├── auth.ts           # Store autoryzacji
-│   ├── cart.ts           # Store koszyka
-│   └── products.ts       # Store produktów
-├── app.vue               # Główny komponent aplikacji
-├── nuxt.config.ts        # Konfiguracja Nuxt
-├── firebase.json         # Konfiguracja Firebase
-├── firestore.rules       # Reguły Firestore
-└── storage.rules         # Reguły Storage
-```
-
-## Integration Points
-
-1. **Firebase**:
-
-   - Integracja Firestore do przechowywania produktów i zamówień
-   - Firebase Authentication do zarządzania użytkownikami
-   - Firebase Storage do przechowywania zdjęć produktów
-   - Firebase Functions do obsługi formularza kontaktowego
-
-2. **Stripe**:
-
-   - Integracja płatności dla procesu checkout
-   - Obsługa różnych metod płatności
-
-3. **Nuxt Modules**:
-   - i18n do wielojęzyczności
-   - Pinia do zarządzania stanem
-   - @nuxt/image do optymalizacji obrazów
-   - @nuxt/ui do interfejsu użytkownika
-
-## Timeline & Milestones
-
-1. **Faza 1: Podstawy** (4 tygodnie) ✅
-
-   - ✅ Konfiguracja projektu i środowiska
-   - ✅ Implementacja layoutu i podstawowych komponentów
-   - ✅ Konfiguracja Firebase i @nuxt/ui
-   - ✅ Konfiguracja wielojęzyczności
-
-2. **Faza 2: Funkcje Podstawowe** (6 tygodni) ✅
-
-   - ✅ Implementacja logiki przeglądania produktów
-   - ✅ Funkcjonalność koszyka z Pinia
-   - ✅ Strony statyczne (O nas, Kontakt)
-   - ✅ Integracja z Firestore
-
-3. **Faza 3: Autoryzacja i Użytkownicy** (w trakcie) 🔄
-
-   1. **System logowania i rejestracji**:
-
-      - [x] Dokończenie widoku logowania (login.vue)
-      - [x] Implementacja formularza rejestracji
-      - [x] Integracja Firebase Authentication
-      - [ ] Dodanie logowania przez Google/Facebook (opcjonalnie)
-      - [🔄] Implementacja resetowania hasła
-      - [🔄] Weryfikacja adresu email
-      - [x] Zabezpieczenie chronionych tras w aplikacji
-
-   2. **Profile użytkowników**:
-
-      - [🔄] Utworzenie widoku profilu użytkownika
-      - [🔄] Implementacja edycji danych użytkownika
-      - [ ] Dodanie historii zamówień
-      - [ ] Zarządzanie adresami dostawy
-      - [ ] Implementacja ustawień powiadomień
-
-   3. **Podstawy panelu administracyjnego**:
-      - [ ] Utworzenie osobnego layoutu dla panelu admina
-      - [ ] Implementacja uwierzytelniania i autoryzacji dla administratorów
-      - [ ] Dodanie podstawowego dashboardu
-      - [ ] Przygotowanie struktury do zarządzania produktami
-
-4. **Faza 4: Płatności i Zamówienia** (6 tygodni) ❌
-
-   - ❌ Integracja Stripe
-   - ❌ Proces checkout
-   - ❌ System zamówień
-
-5. **Faza 5: Panel Administratora** (4 tygodnie) ❌
-
-   - ❌ Zarządzanie produktami
-   - ❌ Zarządzanie zamówieniami
-   - ❌ Konfiguracja uprawnień
-
-6. **Faza 6: Optymalizacja i PWA** (4 tygodnie) 🔄
-   - [x] Optymalizacja wydajności (częściowo)
-   - [🔄] Implementacja PWA (w trakcie)
-   - [x] Podstawowe testy i bugfixy
-
-Legenda:
-
-- ✅ Zrealizowane
-- 🔄 W trakcie realizacji
-- ❌ Do zrealizowania
-
-## Szczegółowy Plan Implementacji
-
-### Faza 2: Funkcje Podstawowe (zakończone) ✅
-
-1. **Implementacja logiki przeglądania produktów**:
-
-   - [x] Utworzenie modelu danych dla produktów w Firestore
-   - [x] Implementacja listingu wszystkich produktów na stronie shop/index.vue
-   - [x] Dodanie filtrowania produktów według kategorii
-   - [x] Implementacja sortowania produktów według ceny, daty i nazwy
-   - [x] Dodanie paginacji dla wyników wyszukiwania
-   - [x] Implementacja widoku szczegółowego produktu (product/[id].vue)
-   - [x] Dodanie galerii zdjęć produktu
-   - [x] Implementacja sekcji "Podobne produkty"
-
-2. **Integracja z Firestore**:
-   - [x] Konfiguracja reguł bezpieczeństwa Firestore
-   - [x] Implementacja serwisów do pobierania danych z Firestore
-   - [x] Opracowanie struktury kolekcji w bazie danych
-   - [x] Implementacja mechanizmów cache'owania dla częstych zapytań
-   - [x] Testy wydajności zapytań do Firestore
-
-### Faza 3: Autoryzacja i Użytkownicy
-
-1. **System logowania i rejestracji**:
-
-   - [x] Dokończenie widoku logowania (login.vue)
-   - [x] Implementacja formularza rejestracji
-   - [x] Integracja Firebase Authentication
-   - [ ] Dodanie logowania przez Google/Facebook (opcjonalnie)
-   - [🔄] Implementacja resetowania hasła
-   - [🔄] Weryfikacja adresu email
-   - [x] Zabezpieczenie chronionych tras w aplikacji
-
-2. **Profile użytkowników**:
-
-   - [🔄] Utworzenie widoku profilu użytkownika
-   - [🔄] Implementacja edycji danych użytkownika
-   - [ ] Dodanie historii zamówień
-   - [ ] Zarządzanie adresami dostawy
-   - [ ] Implementacja ustawień powiadomień
-
-3. **Podstawy panelu administracyjnego**:
-   - [ ] Utworzenie osobnego layoutu dla panelu admina
-   - [ ] Implementacja uwierzytelniania i autoryzacji dla administratorów
-   - [ ] Dodanie podstawowego dashboardu
-   - [ ] Przygotowanie struktury do zarządzania produktami
-
-### Faza 6: Optymalizacja i PWA (w trakcie) 🔄
-
-1. **Optymalizacja wydajności**:
-
-   - [x] Refaktoryzacja kodu i usunięcie zbędnych plików
-   - [x] Bezpieczne zarządzanie kluczami API i zmiennymi środowiskowymi
-   - [x] Poprawa obsługi błędów podczas inicjalizacji Firebase
-   - [x] Implementacja obsługi wielojęzyczności bez błędów formatowania
-   - [🔄] Optymalizacja czasu ładowania strony
-   - [ ] Optymalizacja obrazów i zasobów statycznych
-
-2. **Implementacja PWA**:
-
-   - [x] Dodanie podstawowych stron aplikacji (regulamin, polityka prywatności, informacje o dostawie)
-   - [🔄] Przygotowanie manifest.json i konfiguracji service worker
-   - [ ] Testowanie funkcji instalacji aplikacji (A2HS)
-   - [ ] Implementacja powiadomień push
-
-3. **Testy i bugfixy**:
-   - [x] Naprawa błędów inicjalizacji Firebase
-   - [x] Naprawa błędów formatowania w wielojęzyczności
-   - [x] Usprawnienie procesu inicjalizacji aplikacji
-   - [🔄] Testy kompatybilności z różnymi przeglądarkami
-   - [ ] Testy wydajnościowe i user experience
-
-### Zrealizowane zadania (25.04.2025):
-
-1. **Bezpieczeństwo i konfiguracja**:
-
-   - [x] Przeniesienie kluczy Firebase do zmiennych środowiskowych
-   - [x] Utworzenie pliku .env.example jako wzoru dla konfiguracji
-   - [x] Usprawnienie mechanizmu inicjalizacji Firebase
-   - [x] Implementacja bezpiecznej obsługi błędów w przypadku braku konfiguracji Firebase
-
-2. **UI i funkcjonalność**:
-
-   - [x] Utworzenie brakujących stron: shipping.vue, privacy-policy.vue, terms.vue
-   - [x] Dodanie tłumaczeń dla nowych stron w plikach i18n
-   - [x] Naprawa błędów formatowania w plikach tłumaczeń
-   - [x] Usunięcie zbędnych plików i folderów przed wdrożeniem
-
-3. **Optymalizacja**:
-   - [x] Usprawnienie kolejności inicjalizacji komponentów aplikacji
-   - [x] Poprawa zarządzania pluginami i providersami w Nuxt
-
-### Kolejne kroki (Faza 4)
-
-Po ukończeniu Fazy 3 i rozpoczętych pracach z Fazy 6, przejdziemy do implementacji:
-
-1. Integracji Stripe
-2. Procesu checkout
-3. Systemu zamówień
-
-## Future Considerations
-
-1. **System rekomendacji** - Implementacja algorytmu rekomendacji produktów na podstawie historii przeglądania i zakupów.
-
-2. **Rozszerzona wielojęzyczność** - Dodanie kolejnych języków (np. niemiecki, francuski).
-
-3. **Integracja z mediami społecznościowymi** - Udostępnianie produktów w mediach społecznościowych.
-
-4. **Program lojalnościowy** - System punktów i rabatów dla stałych klientów.
-
-5. **Zaawansowana analityka** - Implementacja zaawansowanych narzędzi analitycznych do śledzenia zachowań użytkowników.
-
-6. **System recenzji** - Możliwość wystawiania opinii i ocen produktom przez klientów.
-
-7. **Funkcje PWA do przyszłego rozwoju**:
-   - Zaawansowane wsparcie offline
-   - Automatyczne aktualizacje aplikacji w tle
-   - Zaawansowane strategie cache'owania (network-first vs cache-first)
-
-## Success Metrics
-
-1. **Konwersja** - Wskaźnik konwersji odwiedzających na klientów.
-
-2. **Średnia wartość koszyka** - Średnia wartość zamówienia.
-
-3. **Czas spędzany na stronie** - Pomiar zaangażowania użytkowników.
-
-4. **Liczba powracających klientów** - Miernik zadowolenia klientów.
-
-5. **Wydajność** - Czas ładowania strony i innych wskaźników wydajnościowych.
-
-6. **Ruch mobilny vs desktop** - Proporcja odwiedzin z urządzeń mobilnych i stacjonarnych.
+- Rozważyć implementację strategii "code splitting" dla większych modułów
+- Optymalizacja First Contentful Paint (FCP) i Time to Interactive (TTI)
+- Implementacja pamięci podręcznej dla danych pobieranych z Firebase
+- Monitorowanie wydajności za pomocą Lighthouse i WebPageTest

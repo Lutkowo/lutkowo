@@ -1,0 +1,3 @@
+To jest placeholder dla apple-touch-icon.png.
+Ikona ta powinna być o wymiarach 180x180 pikseli i będzie używana 
+na urządzeniach Apple gdy użytkownik doda aplikację PWA do ekranu głównego.

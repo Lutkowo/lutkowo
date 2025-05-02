@@ -2,58 +2,29 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest zalogowany
-    function isLoggedIn() {
-      return request.auth != null;
-    }
-    
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest właścicielem dokumentu
-    function isOwner(userId) {
-      return isLoggedIn() && request.auth.uid == userId;
-    }
-    
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest administratorem
-    function isAdmin() {
-      return isLoggedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
-    }
-
-    // Publiczne produkty - dostępne dla wszystkich do odczytu
+    // Produkty - dostępne publicznie do odczytu
     match /products/{productId} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow write: if request.auth != null && request.auth.token.admin == true;
     }
     
-    // Kategorie produktów - dostępne dla wszystkich do odczytu
+    // Kategorie - dostępne publicznie do odczytu
     match /categories/{categoryId} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow write: if request.auth != null && request.auth.token.admin == true;
     }
     
-    // Zamówienia - użytkownicy mogą tworzyć zamówienia i czytać tylko swoje
-    match /orders/{orderId} {
-      allow read: if isOwner(resource.data.userId) || isAdmin();
-      allow create: if isLoggedIn() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAdmin(); 
-      allow delete: if isAdmin();
-    }
-    
-    // Użytkownicy - profil użytkownika może być odczytywany/modyfikowany tylko przez samego użytkownika lub administratora
+    // Użytkownicy - tylko własne dane
     match /users/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow create: if isLoggedIn() && request.auth.uid == userId;
-      allow update: if isOwner(userId) || isAdmin();
-      allow delete: if isAdmin();
-      
-      // Koszyk użytkownika - dostępny tylko dla właściciela
-      match /cart/{itemId} {
-        allow read, write: if isOwner(userId);
-      }
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
     }
     
-    // Lista administratorów - tylko administratorzy mogą czytać
-    match /admins/{userId} {
-      allow read: if isAdmin();
-      allow write: if isAdmin();
+    // Zamówienia - użytkownik może odczytywać/tworzyć własne zamówienia
+    match /orders/{orderId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || request.auth.token.admin == true);
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if request.auth != null && request.auth.token.admin == true;
     }
   }
 }

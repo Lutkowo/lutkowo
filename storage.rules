@@ -1,53 +1,22 @@
 rules_version = '2';
-
 service firebase.storage {
   match /b/{bucket}/o {
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest zalogowany
-    function isLoggedIn() {
-      return request.auth != null;
-    }
-    
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest właścicielem pliku
-    function isOwner(userId) {
-      return isLoggedIn() && request.auth.uid == userId;
-    }
-    
-    // Funkcja pomocnicza sprawdzająca, czy użytkownik jest administratorem
-    function isAdmin() {
-      return isLoggedIn() && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid));
-    }
-    
-    // Obrazy produktów - publiczny dostęp do odczytu, tylko administratorzy mogą zapisywać
-    match /products/{productId}/{fileName} {
+    // Obrazy produktów - publiczny dostęp do odczytu, tylko admin może zapisywać
+    match /products/{productId}/{allImages=**} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow write: if request.auth != null && request.auth.token.admin == true;
     }
     
-    // Avatary użytkowników - publiczny dostęp do odczytu, tylko właściciel może zapisywać
-    match /users/{userId}/avatar.{extension} {
+    // Profilowe zdjęcia użytkowników - dostęp tylko dla właściciela
+    match /users/{userId}/{allImages=**} {
       allow read: if true;
-      allow write: if isOwner(userId) || isAdmin();
+      allow write: if request.auth != null && request.auth.uid == userId;
     }
     
-    // Pliki zamówień - tylko właściciel zamówienia i administratorzy mogą czytać
-    match /orders/{orderId}/{fileName} {
-      allow read: if isLoggedIn() && (
-        firestore.get(/databases/(default)/documents/orders/$(orderId)).data.userId == request.auth.uid || 
-        isAdmin()
-      );
-      allow write: if isAdmin();
-    }
-    
-    // Pliki tymczasowe - tylko zalogowani użytkownicy mogą dodawać, tylko administratorzy mogą modyfikować
-    match /temp/{userId}/{fileName} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow create: if isOwner(userId);
-      allow update, delete: if isAdmin();
-      
-      // Automatyczne usuwanie po 7 dniach
-      match /{allPaths=**} {
-        allow read: if isOwner(userId) || isAdmin();
-      }
+    // Publiczne zasoby - dostępne do odczytu dla wszystkich
+    match /public/{allPublic=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
     }
   }
 }
