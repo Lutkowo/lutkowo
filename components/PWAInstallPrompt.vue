@@ -4,7 +4,7 @@
       <div class="prompt-content">
         <div class="prompt-header">
           <UIcon name="i-heroicons-sparkles" class="prompt-icon" />
-          <h3>{{ $t('pwa.installTitle') }}</h3>
+          <h3>{{ $t("pwa.installTitle") }}</h3>
           <UButton
             color="gray"
             variant="ghost"
@@ -15,23 +15,13 @@
           />
         </div>
         <div class="prompt-body">
-          <p>{{ $t('pwa.installText') }}</p>
+          <p>{{ $t("pwa.installText") }}</p>
           <div class="prompt-actions">
-            <UButton
-              color="primary"
-              variant="solid"
-              class="install-button"
-              @click="installPWA"
-            >
-              {{ $t('pwa.installButton') }}
+            <UButton color="primary" variant="solid" class="install-button" @click="installPWA">
+              {{ $t("pwa.installButton") }}
             </UButton>
-            <UButton
-              color="gray"
-              variant="outline"
-              class="not-now-button"
-              @click="dismissPrompt"
-            >
-              {{ $t('pwa.notNowButton') }}
+            <UButton color="gray" variant="outline" class="not-now-button" @click="dismissPrompt">
+              {{ $t("pwa.notNowButton") }}
             </UButton>
           </div>
         </div>
@@ -41,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 // Stan wyświetlania monitu instalacji
 const showInstallPrompt = ref(false);
@@ -53,12 +43,12 @@ let deferredPrompt: any = null;
 const handleBeforeInstallPrompt = (e: Event) => {
   // Zapobiegaj automatycznemu wyświetlaniu monitu
   e.preventDefault();
-  
+
   // Zapisz zdarzenie do późniejszego użycia
   deferredPrompt = e;
-  
+
   // Sprawdź, czy użytkownik nie odrzucił już monitu
-  const promptDismissed = localStorage.getItem('lutkowo-pwa-prompt-dismissed');
+  const promptDismissed = localStorage.getItem("lutkowo-pwa-prompt-dismissed");
   if (!promptDismissed) {
     // Opóźnij wyświetlenie monitu o 5 sekund, aby nie przeszkadzać w pierwszym wrażeniu
     setTimeout(() => {
@@ -72,46 +62,46 @@ const installPWA = async () => {
   if (!deferredPrompt) {
     return;
   }
-  
+
   // Pokaż natywny prompt instalacji
   deferredPrompt.prompt();
-  
+
   // Czekaj na decyzję użytkownika
   const { outcome } = await deferredPrompt.userChoice;
-  
+
   // Wyczyść zapisane zdarzenie
   deferredPrompt = null;
-  
+
   // Ukryj nasz własny prompt
   showInstallPrompt.value = false;
-  
+
   // Zapisz informację o wyniku
-  if (outcome === 'accepted') {
-    localStorage.setItem('lutkowo-pwa-installed', 'true');
+  if (outcome === "accepted") {
+    localStorage.setItem("lutkowo-pwa-installed", "true");
   }
 };
 
 // Funkcja odrzucenia monitu
 const dismissPrompt = () => {
   showInstallPrompt.value = false;
-  
+
   // Zapisz informację w localStorage, aby nie pokazywać monitu ponownie przez 7 dni
   const expiryDate = new Date();
   expiryDate.setDate(expiryDate.getDate() + 7);
-  localStorage.setItem('lutkowo-pwa-prompt-dismissed', expiryDate.toISOString());
+  localStorage.setItem("lutkowo-pwa-prompt-dismissed", expiryDate.toISOString());
 };
 
 // Sprawdź, czy monit powinien być wyświetlony
 const checkPromptDismissalStatus = () => {
-  const promptDismissed = localStorage.getItem('lutkowo-pwa-prompt-dismissed');
-  
+  const promptDismissed = localStorage.getItem("lutkowo-pwa-prompt-dismissed");
+
   if (promptDismissed) {
     const dismissalDate = new Date(promptDismissed);
     const now = new Date();
-    
+
     // Jeśli upłynęło 7 dni od odrzucenia, usuń zapisaną preferencję
     if (now > dismissalDate) {
-      localStorage.removeItem('lutkowo-pwa-prompt-dismissed');
+      localStorage.removeItem("lutkowo-pwa-prompt-dismissed");
       return false;
     }
     return true;
@@ -122,17 +112,18 @@ const checkPromptDismissalStatus = () => {
 // Podłącz zdarzenia przy montowaniu komponentu
 onMounted(() => {
   // Sprawdź, czy aplikacja nie jest już zainstalowana
-  const isPWAInstalled = localStorage.getItem('lutkowo-pwa-installed') || 
-                         window.matchMedia('(display-mode: standalone)').matches;
-  
+  const isPWAInstalled =
+    localStorage.getItem("lutkowo-pwa-installed") ||
+    window.matchMedia("(display-mode: standalone)").matches;
+
   if (!isPWAInstalled && !checkPromptDismissalStatus()) {
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
   }
 });
 
 // Odłącz zdarzenia przy odmontowywaniu komponentu
 onBeforeUnmount(() => {
-  window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 });
 </script>
 
