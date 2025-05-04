@@ -5,7 +5,10 @@
 			<div class="categories-grid">
 				<div class="category-card">
 					<div class="category-image">
-						<img src="/images/categories/kategoria_ceramika.png" alt="Ceramika" />
+						<img
+							src="/images/categories/kategoria_ceramika.png"
+							alt="Ceramika"
+						/>
 					</div>
 					<h3 class="category-name">{{ $t("categories.ceramics.name") }}</h3>
 					<p class="category-description">

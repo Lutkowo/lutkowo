@@ -10,7 +10,10 @@
 					class="product-card"
 				>
 					<div class="product-image">
-						<img src="/images/products/example_product.png" :alt="product.name" />
+						<img
+							src="/images/products/example_product.png"
+							:alt="product.name"
+						/>
 					</div>
 					<div class="product-info">
 						<h3 class="product-title">{{ product.name }}</h3>
