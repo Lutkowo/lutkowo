@@ -25,17 +25,6 @@
 
 				<div class="category-card">
 					<div class="category-image">
-						<!-- Używam tu obrazu ceramiki jako zamiennik, ponieważ nie ma dedykowanego obrazu dla gliny -->
-						<img src="/images/categories/kategoria_ceramika.png" alt="Glina" />
-					</div>
-					<h3 class="category-name">{{ $t("categories.clay.name") }}</h3>
-					<p class="category-description">
-						{{ $t("categories.clay.description") }}
-					</p>
-				</div>
-
-				<div class="category-card">
-					<div class="category-image">
 						<img src="/images/categories/kategoria_makrama.png" alt="Makrama" />
 					</div>
 					<h3 class="category-name">{{ $t("categories.macrame.name") }}</h3>
@@ -80,7 +69,7 @@
 
 	.categories-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
 
@@ -131,6 +120,12 @@
 	}
 
 	@media (max-width: 992px) {
+		.categories-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
 		.categories-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}

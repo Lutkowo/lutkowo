@@ -17,7 +17,7 @@
   "about": {
     "title": "About us",
     "paragraph1": "Lutkowo is a place where every product tells its own story. Our handicrafts are born from the passion for creating unique objects that combine functionality with beauty.",
-    "paragraph2": "Since 2020, we've been creating ceramics, glass, clay products and macrame, putting our heart and care for the highest quality into every detail. All products are handmade in our workshop in the heart of Poland.",
+    "paragraph2": "Since 2020, we've been creating ceramics, glass and macrame, putting our heart and care for the highest quality into every detail. All products are handmade in our workshop in the heart of Poland.",
     "cta": "Get to know us better"
   },
   "products": {
@@ -28,15 +28,11 @@
     "title": "Our categories",
     "ceramics": {
       "name": "Ceramics",
-      "description": "Handmade items from fine clay"
+      "description": "Handmade items from natural clay from various regions of Poland"
     },
     "glass": {
       "name": "Glass",
       "description": "Artistic blown glass products"
-    },
-    "clay": {
-      "name": "Clay",
-      "description": "Products from natural clay from regions of Poland"
     },
     "macrame": {
       "name": "Macrame",

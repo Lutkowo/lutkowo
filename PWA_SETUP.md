@@ -2,7 +2,7 @@
 
 ## Overview
 
-Lutkowo to sklep internetowy specjalizujący się w sprzedaży ręcznie wykonanych produktów (ceramika, szkło, glina oraz makramy). Platforma umożliwia przeglądanie i filtrowanie unikalnych, rękodzielniczych produktów, zapewniając responsywny interfejs dostosowany zarówno do urządzeń stacjonarnych, jak i mobilnych. Projekt implementuje funkcję przeglądania produktów, z naciskiem na wielojęzyczność i dostępność.
+Lutkowo to sklep internetowy specjalizujący się w sprzedaży ręcznie wykonanych produktów (ceramika, szkło oraz makramy). Platforma umożliwia przeglądanie i filtrowanie unikalnych, rękodzielniczych produktów, zapewniając responsywny interfejs dostosowany zarówno do urządzeń stacjonarnych, jak i mobilnych. Projekt implementuje funkcję przeglądania produktów, z naciskiem na wielojęzyczność i dostępność.
 
 ## Problem Statement
 
@@ -69,7 +69,7 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy prezentacyjnej, kt�
 
 ### 1. Produkty i Kategorie
 
-- Przeglądanie produktów z podziałem na kategorie (ceramika, szkło, glina oraz makramy)
+- Przeglądanie produktów z podziałem na kategorie (ceramika, szkło, makramy)
 - Filtrowanie produktów według ceny i kategorii
 - Sortowanie produktów według ceny, daty i nazwy
 - Szczegółowe strony produktów z galeriami zdjęć, opisami i parametrami
@@ -135,7 +135,7 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy prezentacyjnej, kt�
 
 5. **Sekcja "Nasze kategorie"**
 
-   - Podział na główne kategorie produktów (ceramika, szkło, glina, makramy)
+   - Podział na główne kategorie produktów (ceramika, szkło, makramy)
    - Wizualne reprezentacje kategorii z charakterystyczną ikonografią
    - Przygotowanie pod przyszłe linkowanie do stron kategorii
 

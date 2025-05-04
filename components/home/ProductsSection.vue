@@ -47,8 +47,8 @@
 		},
 		{
 			id: 5,
-			name: "Gliniany talerz",
-			description: "Wytrzymały talerz z naturalnej gliny",
+			name: "Ceramiczna miska",
+			description: "Stylowa miska z naturalnej gliny wypalana tradycyjnie",
 		},
 		{
 			id: 6,

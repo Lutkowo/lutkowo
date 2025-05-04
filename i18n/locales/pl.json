@@ -17,7 +17,7 @@
   "about": {
     "title": "O nas",
     "paragraph1": "Lutkowo to miejsce, gdzie każdy produkt opowiada swoją historię. Nasze rękodzieło powstaje z pasji do tworzenia unikalnych przedmiotów, które łączą funkcjonalność z pięknem.",
-    "paragraph2": "Od 2020 roku tworzymy ceramikę, szkło, wyroby z gliny oraz makramy, wkładając w każdy detal serce i dbałość o najwyższą jakość. Wszystkie produkty wykonywane są ręcznie w naszej pracowni w sercu Polski.",
+    "paragraph2": "Od 2020 roku tworzymy ceramikę, szkło oraz makramy, wkładając w każdy detal serce i dbałość o najwyższą jakość. Wszystkie produkty wykonywane są ręcznie w naszej pracowni w sercu Polski.",
     "cta": "Poznaj nas bliżej"
   },
   "products": {
@@ -28,15 +28,11 @@
     "title": "Nasze kategorie",
     "ceramics": {
       "name": "Ceramika",
-      "description": "Ręcznie robione wyroby z gliny szlachetnej"
+      "description": "Ręcznie robione wyroby z naturalnej gliny z różnych regionów Polski"
     },
     "glass": {
       "name": "Szkło",
       "description": "Artystyczne wyroby ze szkła dmuchanego"
-    },
-    "clay": {
-      "name": "Glina",
-      "description": "Produkty z naturalnej gliny z okolic Polski"
     },
     "macrame": {
       "name": "Makramy",
