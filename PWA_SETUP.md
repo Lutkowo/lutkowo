@@ -109,63 +109,63 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy prezentacyjnej, kt�
 
 1. **Header**
 
-   - Logo Lutkowo (placeholder do czasu dostarczenia finalnego logo)
-   - Minimalny navbar (tylko przełącznik języka)
-   - Przyciemniany przy scrollowaniu
+   - ✅ Logo Lutkowo (placeholder do czasu dostarczenia finalnego logo)
+   - ✅ Minimalny navbar (tylko przełącznik języka)
+   - ✅ Przyciemniany przy scrollowaniu
 
 2. **Hero Section**
 
-   - Duży, przyciągający uwagę obraz wysokiej jakości (rękodzieło)
-   - Hasło główne: "Lutkowo - Rękodzieło z pasją" (+ wersja angielska)
-   - Krótki slogan opisujący charakter produktów
-   - Subtelna animacja wejścia
+   - ✅ Duży, przyciągający uwagę obraz wysokiej jakości (rękodzieło)
+   - ✅ Hasło główne: "Lutkowo - Rękodzieło z pasją" (+ wersja angielska)
+   - ✅ Krótki slogan opisujący charakter produktów
+   - ✅ Subtelna animacja wejścia
 
 3. **Sekcja "O nas"**
 
-   - Krótka historia marki Lutkowo i filozofia tworzenia
-   - Mały wizerunek twórców lub pracowni (opcjonalnie)
-   - Call-to-action kierujący do przyszłych sekcji produktów
+   - ✅ Krótka historia marki Lutkowo i filozofia tworzenia
+   - ⬜ Mały wizerunek twórców lub pracowni (opcjonalnie)
+   - ✅ Call-to-action kierujący do przyszłych sekcji produktów
 
 4. **Galeria przykładowych produktów**
 
-   - Grid z 6-8 przykładowymi produktami w różnych kategoriach
-   - Każdy produkt: zdjęcie, nazwa, krótki opis (bez ceny w MVP)
-   - Subtelny hover effect dla interaktywności
-   - Lazy loading obrazów dla optymalizacji wydajności
+   - ✅ Grid z 6-8 przykładowymi produktami w różnych kategoriach
+   - ✅ Każdy produkt: zdjęcie, nazwa, krótki opis (bez ceny w MVP)
+   - ✅ Subtelny hover effect dla interaktywności
+   - ✅ Lazy loading obrazów dla optymalizacji wydajności
 
 5. **Sekcja "Nasze kategorie"**
 
-   - Podział na główne kategorie produktów (ceramika, szkło, makramy)
-   - Wizualne reprezentacje kategorii z charakterystyczną ikonografią
-   - Przygotowanie pod przyszłe linkowanie do stron kategorii
+   - ✅ Podział na główne kategorie produktów (ceramika, szkło, makramy)
+   - ✅ Wizualne reprezentacje kategorii z charakterystyczną ikonografią
+   - ✅ Przygotowanie pod przyszłe linkowanie do stron kategorii
 
 6. **Footer**
-   - Logo (mniejsza wersja)
-   - Linki placeholder do przyszłych stron (O nas, Kontakt, itd.)
-   - Informacje kontaktowe podstawowe
-   - Ikony social media (placeholdery)
-   - Copyright i podstawowe linki prawne
+   - ✅ Logo (mniejsza wersja)
+   - ✅ Linki placeholder do przyszłych stron (O nas, Kontakt, itd.)
+   - ✅ Informacje kontaktowe podstawowe
+   - ✅ Ikony social media (placeholdery)
+   - ✅ Copyright i podstawowe linki prawne
 
 ### Elementy UI w MVP
 
-- **Przycisk CTA (Call to Action)** - przygotowany pod przyszłe funkcje
-- **Karty produktów** - z subtelnym efektem hover i cieniem
-- **Ikony kategorii** - minimalistyczne, spójne z identyfikacją wizualną
-- **Animacje przewijania** - subtelne animacje elementów podczas scrollowania
-- **Responsywne siatki** - dostosowujące się do różnych rozmiarów ekranu
-- **Nawigacja** - minimalistyczna w MVP, przygotowana pod rozbudowę
+- ✅ **Przycisk CTA (Call to Action)** - przygotowany pod przyszłe funkcje
+- ✅ **Karty produktów** - z subtelnym efektem hover i cieniem
+- ✅ **Ikony kategorii** - minimalistyczne, spójne z identyfikacją wizualną
+- ✅ **Animacje przewijania** - subtelne animacje elementów podczas scrollowania
+- ✅ **Responsywne siatki** - dostosowujące się do różnych rozmiarów ekranu
+- ✅ **Nawigacja** - minimalistyczna w MVP, przygotowana pod rozbudowę
 
 ## Harmonogram Projektu (Timeline)
 
-### Milestone 1: MVP - Strona Główna (Planowany)
+### Milestone 1: MVP - Strona Główna (W trakcie realizacji)
 
-- Implementacja podstawowego layoutu strony głównej
-- Stworzenie podstawowej struktury projektu w Nuxt.js
-- Konfiguracja podstawowych ustawień PWA
-- Podstawowa konfiguracja i18n (polski i angielski)
-- Wdrożenie podstawowej wersji SEO
-- Pierwsza wersja responsywnego designu
-- Wdrożenie MVP na GitHub Pages
+- ✅ Implementacja podstawowego layoutu strony głównej
+- ✅ Stworzenie podstawowej struktury projektu w Nuxt.js
+- ⬜ Konfiguracja podstawowych ustawień PWA
+- ✅ Podstawowa konfiguracja i18n (polski i angielski)
+- 🔄 Wdrożenie podstawowej wersji SEO
+- ✅ Pierwsza wersja responsywnego designu
+- ⬜ Wdrożenie MVP na GitHub Pages
 
 ### Przyszłe Milestones (Propozycje)
 
@@ -196,19 +196,32 @@ _Uwaga: Milestone 2+ są wstępnymi propozycjami i będą doprecyzowane po reali
 
 ### Priorytet 1 (MVP)
 
-- Konfiguracja projektu Nuxt 3 z TypeScript
-- Implementacja podstawowego layoutu strony głównej z sekcjami:
-  - Header z placeholderem logo
-  - Hero section z głównym hasłem i zdjęciem
-  - Sekcja "O nas"
-  - Galeria przykładowych produktów
-  - Sekcja "Nasze kategorie"
-  - Footer z podstawowymi informacjami
-- Implementacja podstawowych metatagów SEO
-- Konfiguracja podstawowego PWA (manifest i prosty service worker)
-- Konfiguracja wielojęzyczności (polski/angielski)
-- Implementacja responsywnego designu
-- Wdrożenie MVP na GitHub Pages
+- ✅ Konfiguracja projektu Nuxt 3 z TypeScript
+- ✅ Implementacja podstawowego layoutu strony głównej z sekcjami:
+  - ✅ Header z placeholderem logo
+  - ✅ Hero section z głównym hasłem i zdjęciem
+  - ✅ Sekcja "O nas"
+  - ✅ Galeria przykładowych produktów
+  - ✅ Sekcja "Nasze kategorie"
+  - ✅ Footer z podstawowymi informacjami
+- 🔄 Implementacja podstawowych metatagów SEO
+- ⬜ Konfiguracja podstawowego PWA (manifest i prosty service worker)
+- ✅ Konfiguracja wielojęzyczności (polski/angielski)
+- ✅ Implementacja responsywnego designu
+- ⬜ Wdrożenie MVP na GitHub Pages
+
+### Aktualne Zadania
+
+1. Dokończenie konfiguracji SEO (metatagi, opisy, Open Graph)
+2. Implementacja podstawowej konfiguracji PWA
+3. Wdrożenie na GitHub Pages
+4. Przygotowanie do Milestone 2 (Katalog Produktów)
+
+### Podjęte Decyzje Projektowe
+
+- **Kategorie produktów**: Połączono kategorie "ceramika" i "glina" w jedną kategorię "ceramika" dla lepszej spójności oferty i klarowności dla klientów
+- **Układ strony**: Przyjęto 3-kolumnowy układ dla sekcji kategorii dla lepszej harmonii wizualnej
+- **Obrazy**: Zastąpiono placeholdery prawdziwymi obrazami w sekcjach produktów i kategorii
 
 ### Priorytet 2 (Przyszłe zadania)
 
@@ -243,7 +256,7 @@ lutkowo/
 │   ├── layout/               # Komponenty używane w layoutach (header, footer, sidebar)
 │   ├── product/              # Komponenty związane z produktami
 │   ├── ui/                   # Komponenty UI (przyciski, inputy, modals)
-│   └── home/                 # Komponenty specyficzne dla strony głównej
+│   └── home/                 # Komponenty specyficzne dla strony głównej - ✅ zaimplementowane
 ├── composables/              # Reużywalne funkcje composition API
 │   ├── useProduct.ts         # Logika związana z produktami
 │   ├── useAuth.ts            # Logika związana z autoryzacją
@@ -252,26 +265,26 @@ lutkowo/
 │   ├── en/                   # Treści w języku angielskim
 │   └── pl/                   # Treści w języku polskim
 ├── layouts/                  # Layouty aplikacji
-│   ├── default.vue           # Domyślny layout
+│   ├── default.vue           # Domyślny layout - ✅ zaimplementowane
 │   └── admin.vue             # Layout dla panelu administratora
 ├── locales/                  # Pliki tłumaczeń
-│   ├── en.json               # Tłumaczenia angielskie
-│   └── pl.json               # Tłumaczenia polskie
+│   ├── en.json               # Tłumaczenia angielskie - ✅ zaimplementowane
+│   └── pl.json               # Tłumaczenia polskie - ✅ zaimplementowane
 ├── middleware/               # Middleware Nuxt
 │   └── auth.ts               # Middleware autoryzacji
 ├── pages/                    # Strony aplikacji
-│   ├── index.vue             # Strona główna
+│   ├── index.vue             # Strona główna - ✅ zaimplementowane
 │   ├── product/              # Strony produktów
 │   └── admin/                # Strony administracyjne
 ├── plugins/                  # Pluginy Nuxt
 │   ├── firebase.client.ts    # Konfiguracja Firebase (client-side)
-│   └── i18n.ts               # Konfiguracja i18n
+│   └── i18n.ts               # Konfiguracja i18n - ✅ zaimplementowane
 ├── public/                   # Statyczne pliki dostępne publicznie
 │   ├── favicon.ico           # Favicon
 │   ├── robots.txt            # Plik robots.txt
 │   ├── icons/                # Ikony PWA
-│   └── images/               # Statyczne obrazy
-├── server/                   # API i server middleware
+│   └── images/               # Statyczne obrazy - ✅ obrazy kategorii i produktów dodane
+├── server/                   # API i server middleware - ✅ podstawowa struktura
 │   ├── api/                  # API endpoints
 │   └── middleware/           # Server middleware
 ├── stores/                   # Pinia stores
@@ -280,8 +293,8 @@ lutkowo/
 ├── types/                    # Definicje TypeScript
 ├── utils/                    # Funkcje pomocnicze
 ├── .gitignore                # Pliki ignorowane przez Git
-├── app.vue                   # Główny komponent aplikacji
-├── nuxt.config.ts            # Konfiguracja Nuxt
+├── app.vue                   # Główny komponent aplikacji - ✅ zaimplementowane
+├── nuxt.config.ts            # Konfiguracja Nuxt - ✅ podstawowa konfiguracja
 ├── package.json              # Zależności projektu
 ├── tsconfig.json             # Konfiguracja TypeScript
 └── README.md                 # Dokumentacja projektu
@@ -310,26 +323,26 @@ lutkowo/
 
 Proponowana paleta dla przyjaznego, "bajkowego" charakteru, ale z zachowaniem profesjonalizmu:
 
-- **Podstawowy**: #5E9CB2 (spokojny niebieski z pastelowym odcieniem)
-- **Dodatkowy**: #F0C987 (ciepły, jasny żółty)
+- **Podstawowy**: #5E9CB2 (spokojny niebieski z pastelowym odcieniem) - ✅ zaimplementowany
+- **Dodatkowy**: #F0C987 (ciepły, jasny żółty) - ✅ zaimplementowany
 - **Akcent**: #E88C6A (łagodny koralowy)
-- **Neutralny jasny**: #F5F5F5 (prawie biały)
-- **Neutralny ciemny**: #4A5568 (ciemny szary z niebieskim odcieniem)
+- **Neutralny jasny**: #F5F5F5 (prawie biały) - ✅ zaimplementowany
+- **Neutralny ciemny**: #4A5568 (ciemny szary z niebieskim odcieniem) - ✅ zaimplementowany
 
 ### Typografia
 
-- **Nagłówki**: "Quicksand" (zaokrąglony, przyjazny font z charakterem)
-- **Tekst podstawowy**: "Nunito" (czytelny, lekki, z zaokrąglonymi krawędziami)
+- **Nagłówki**: "Quicksand" (zaokrąglony, przyjazny font z charakterem) - ✅ zaimplementowany
+- **Tekst podstawowy**: "Nunito" (czytelny, lekki, z zaokrąglonymi krawędziami) - ✅ zaimplementowany
 - **Akcenty tekstowe**: "Caveat" (odręczny styl dla akcentów, np. w hasłach)
 
 ### Design System
 
 Główne założenia:
 
-- Zaokrąglone kształty (border-radius: 12px dla kart, 8px dla przycisków)
-- Subtelne cienie (box-shadow z niskim rozproszeniem)
-- Przestrzenność (wystarczająca ilość białej przestrzeni między elementami)
-- Delikatne animacje przejść (opóźnienia 0.3-0.5s, łagodne krzywe przejścia)
+- Zaokrąglone kształty (border-radius: 12px dla kart, 8px dla przycisków) - ✅ zaimplementowane
+- Subtelne cienie (box-shadow z niskim rozproszeniem) - ✅ zaimplementowane
+- Przestrzenność (wystarczająca ilość białej przestrzeni między elementami) - ✅ zaimplementowane
+- Delikatne animacje przejść (opóźnienia 0.3-0.5s, łagodne krzywe przejścia) - ✅ zaimplementowane
 - Ilustracyjne akcenty (subtelne elementy graficzne wzmacniające "bajkowy" charakter)
 
 ## Timeline i Milestones
@@ -338,7 +351,7 @@ _Ten rozdział został przeniesiony do sekcji "Harmonogram Projektu (Timeline)" 
 
 ## ToDo - Kwestie do zweryfikowania w przyszłości
 
-### Podstawowa konfiguracja PWA do wdrożenia w MVP
+### Podstawowa konfiguracja PWA do wdrożenia w MVP - ⬜ W toku
 
 - Utworzenie kompletnego manifestu PWA (`manifest.json` lub `manifest.webmanifest`)
 - Konfiguracja podstawowego service workera (cache'owanie strategiczne kluczowych zasobów)
@@ -474,6 +487,12 @@ _Ten rozdział został przeniesiony do sekcji "Harmonogram Projektu (Timeline)" 
    - Zarządzanie zamówieniami (po implementacji Milestone 6)
 
 ## Nowe wnioski i spostrzeżenia z procesu implementacji
+
+### Decyzje Projektowe
+
+- **Kategorie produktów**: Zdecydowano o połączeniu kategorii "ceramika" i "glina" w jedną, co upraszcza ofertę i jest bardziej intuicyjne dla użytkowników
+- **Obrazy produktów**: Zastosowano rzeczywiste zdjęcia zamiast placeholderów, co znacząco poprawiło wygląd i autentyczność strony
+- **Struktura wielojęzyczności**: Zastosowano hierarchiczną organizację tłumaczeń z podziałem na sekcje, co ułatwia zarządzanie treścią w różnych językach
 
 ### Core Web Vitals i wydajność
 
