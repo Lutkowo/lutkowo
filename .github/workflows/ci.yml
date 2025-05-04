@@ -95,6 +95,5 @@ jobs:
         with:
           branch: gh-pages
           folder: .output/public
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository-name: Threshu/lutkowo  # Użyj swojego osobistego konta
+          token: ${{ secrets.DEPLOY_TOKEN }} # Używamy osobistego tokenu dostępu zamiast GITHUB_TOKEN
           clean: true
