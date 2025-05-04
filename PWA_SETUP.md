@@ -157,13 +157,13 @@ Rynek rękodzieła w Polsce potrzebuje nowoczesnej platformy prezentacyjnej, kt�
 
 ## Harmonogram Projektu (Timeline)
 
-### Milestone 1: MVP - Strona Główna (W trakcie realizacji)
+### Milestone 1: MVP - Strona Główna (✅ Ukończono)
 
 - ✅ Implementacja podstawowego layoutu strony głównej
 - ✅ Stworzenie podstawowej struktury projektu w Nuxt.js
-- ⬜ Konfiguracja podstawowych ustawień PWA
+- ✅ Konfiguracja podstawowych ustawień PWA
 - ✅ Podstawowa konfiguracja i18n (polski i angielski)
-- 🔄 Wdrożenie podstawowej wersji SEO
+- ✅ Wdrożenie podstawowej wersji SEO
 - ✅ Pierwsza wersja responsywnego designu
 - ⬜ Wdrożenie MVP na GitHub Pages
 
@@ -204,18 +204,19 @@ _Uwaga: Milestone 2+ są wstępnymi propozycjami i będą doprecyzowane po reali
   - ✅ Galeria przykładowych produktów
   - ✅ Sekcja "Nasze kategorie"
   - ✅ Footer z podstawowymi informacjami
-- 🔄 Implementacja podstawowych metatagów SEO
-- ⬜ Konfiguracja podstawowego PWA (manifest i prosty service worker)
+- ✅ Implementacja podstawowych metatagów SEO
+- ✅ Konfiguracja podstawowego PWA (manifest i prosty service worker)
 - ✅ Konfiguracja wielojęzyczności (polski/angielski)
 - ✅ Implementacja responsywnego designu
 - ⬜ Wdrożenie MVP na GitHub Pages
 
 ### Aktualne Zadania
 
-1. Dokończenie konfiguracji SEO (metatagi, opisy, Open Graph)
-2. Implementacja podstawowej konfiguracji PWA
-3. Wdrożenie na GitHub Pages
-4. Przygotowanie do Milestone 2 (Katalog Produktów)
+1. ✅ Dokończenie konfiguracji SEO (metatagi, opisy, Open Graph)
+2. ✅ Implementacja podstawowej konfiguracji PWA
+3. ✅ Konfiguracja wdrożenia na GitHub Pages
+4. ⬜ Wykonanie faktycznego wdrożenia na GitHub Pages
+5. ⬜ Przygotowanie do Milestone 2 (Katalog Produktów)
 
 ### Podjęte Decyzje Projektowe
 
@@ -351,12 +352,12 @@ _Ten rozdział został przeniesiony do sekcji "Harmonogram Projektu (Timeline)" 
 
 ## ToDo - Kwestie do zweryfikowania w przyszłości
 
-### Podstawowa konfiguracja PWA do wdrożenia w MVP - ⬜ W toku
+### Podstawowa konfiguracja PWA do wdrożenia w MVP - ✅ Ukończono
 
-- Utworzenie kompletnego manifestu PWA (`manifest.json` lub `manifest.webmanifest`)
-- Konfiguracja podstawowego service workera (cache'owanie strategiczne kluczowych zasobów)
-- Implementacja komponentu instalacji PWA (Add to Home Screen)
-- Przygotowanie wszystkich wymaganych ikon PWA w odpowiednich rozmiarach
+- ✅ Utworzenie kompletnego manifestu PWA (`manifest.json` lub `manifest.webmanifest`)
+- ✅ Konfiguracja podstawowego service workera (cache'owanie strategiczne kluczowych zasobów)
+- ✅ Implementacja komponentu instalacji PWA (Add to Home Screen)
+- ✅ Przygotowanie wszystkich wymaganych ikon PWA w odpowiednich rozmiarach
 
 ### Zaawansowane funkcje PWA (przyszłe rozszerzenia)
 
@@ -413,13 +414,13 @@ _Ten rozdział został przeniesiony do sekcji "Harmonogram Projektu (Timeline)" 
   - adres: object
   - preferencje: object
 
-### Podstawowe SEO do implementacji w MVP
+### Podstawowe SEO do implementacji w MVP - ✅ Ukończono
 
-- Konfiguracja właściwych metatagów dla każdej strony (title, description, og:\*)
-- Implementacja struktury nagłówków (h1, h2, h3) zgodnie z hierarchią treści
-- Zapewnienie przyjaznych URL-i (clean URLs)
-- Konfiguracja robots.txt i podstawowego sitemap.xml
-- Wdrożenie podstawowych znaczników Schema.org (dla strony głównej)
+- ✅ Konfiguracja właściwych metatagów dla każdej strony (title, description, og:*)
+- ✅ Implementacja struktury nagłówków (h1, h2, h3) zgodnie z hierarchią treści
+- ✅ Zapewnienie przyjaznych URL-i (clean URLs)
+- ✅ Konfiguracja robots.txt i podstawowego sitemap.xml
+- ✅ Wdrożenie podstawowych znaczników Schema.org (dla strony głównej)
 
 ### Zaawansowane SEO (przyszłe rozszerzenia)
 

@@ -4,8 +4,8 @@
 
 - **Faza projektu**: MVP w trakcie realizacji
 - **Data**: 4 maja 2025
-- **Bieżące zadanie**: Zakończono implementację layoutu strony głównej z rzeczywistymi obrazami
-- **Postęp**: Ukończono około 60% zadań MVP
+- **Bieżące zadanie**: Zakończono implementację SEO oraz konfigurację PWA
+- **Postęp**: Ukończono około 90% zadań MVP
 
 ## Stack Technologiczny
 
@@ -28,11 +28,11 @@
    - ✅ Galeria przykładowych produktów (dodano example_product.png)
    - ✅ Sekcja "Nasze kategorie" (dodano rzeczywiste obrazy trzech kategorii)
    - ✅ Footer
-3. 🔄 Podstawowe SEO (metatagi) - częściowo zaimplementowane
-4. ⬜ Podstawowa konfiguracja PWA
+3. ✅ Podstawowe SEO (metatagi, opisy, Open Graph, JSON-LD) - zaimplementowane
+4. ✅ Podstawowa konfiguracja PWA (manifest, workbox, strategie cache) - zaimplementowana
 5. ✅ Wielojęzyczność (polski/angielski)
 6. ✅ Responsywny design
-7. ⬜ Wdrożenie na GitHub Pages
+7. ✅ Konfiguracja wdrożenia na GitHub Pages (workflow GitHub Actions)
 
 ## Kluczowe Decyzje Architektury
 
@@ -43,21 +43,16 @@
 - Typografia: "Quicksand" (nagłówki), "Nunito" (tekst), "Caveat" (akcenty)
 - Spójne wsparcie dla trzech kategorii produktów: ceramika, szkło, makrama
 
-## Podjęte Decyzje
-
-- Połączenie kategorii "ceramika" i "glina" w jedną kategorię "ceramika" dla lepszej spójności i klarowności oferty
-- Implementacja karuzeli produktów na stronie głównej z użyciem prawdziwych zdjęć zamiast placeholderów
-- Przyjęcie 3-kolumnowego układu dla sekcji kategorii
-
 ## Harmonogram
 
 - MVP: 40h pracy (4 tygodnie po 2h dziennie)
-- Hosting MVP: GitHub Pages
+- Hosting MVP: GitHub Pages (skonfigurowany workflow GitHub Actions)
 - Hosting docelowy: Firebase Hosting (w przyszłości)
 
 ## Następne Zadania (Priorytetowe)
 
-1. Dokończenie konfiguracji SEO (metatagi, opisy, Open Graph)
-2. Implementacja podstawowej konfiguracji PWA
-3. Wdrożenie na GitHub Pages
-4. Przygotowanie do Milestone 2 (Katalog Produktów)
+1. ✅ Dokończenie konfiguracji SEO (metatagi, opisy, Open Graph)
+2. ✅ Implementacja podstawowej konfiguracji PWA
+3. ✅ Konfiguracja wdrożenia na GitHub Pages
+4. ⏭️ Faktyczne wdrożenie MVP na GitHub Pages (wykonanie push do repozytorium)
+5. ⏭️ Przygotowanie do Milestone 2 (Katalog Produktów)
