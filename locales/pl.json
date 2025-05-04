@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Lutkowo - Rękodzieło z pasją",
+    "description": "Lutkowo - sklep z unikalnym rękodziełem. Odkryj wyjątkowe produkty ceramiczne, szklane oraz makramy tworzone z pasją i dbałością o każdy detal."
+  },
+  "nav": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "products": "Produkty",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Lutkowo - Rękodzieło z pasją",
+    "subtitle": "Unikalne wyroby tworzone z miłością do sztuki i detalu",
+    "cta": "Odkryj nasze produkty"
+  },
+  "about": {
+    "title": "O nas",
+    "paragraph1": "Lutkowo to miejsce, gdzie każdy produkt opowiada swoją historię. Nasze rękodzieło powstaje z pasji do tworzenia unikalnych przedmiotów, które łączą funkcjonalność z pięknem.",
+    "paragraph2": "Od 2020 roku tworzymy ceramikę, szkło oraz makramy, wkładając w każdy detal serce i dbałość o najwyższą jakość. Wszystkie produkty wykonywane są ręcznie w naszej pracowni w sercu Polski.",
+    "cta": "Poznaj nas bliżej"
+  },
+  "products": {
+    "title": "Nasze produkty",
+    "viewDetails": "Zobacz szczegóły"
+  },
+  "categories": {
+    "title": "Nasze kategorie",
+    "ceramics": {
+      "name": "Ceramika",
+      "description": "Ręcznie robione wyroby z naturalnej gliny z różnych regionów Polski"
+    },
+    "glass": {
+      "name": "Szkło",
+      "description": "Artystyczne wyroby ze szkła dmuchanego"
+    },
+    "macrame": {
+      "name": "Makramy",
+      "description": "Dekoracyjne wyroby splecione z naturalnych sznurków"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 Lutkowo. Wszelkie prawa zastrzeżone.",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin"
+  }
+}

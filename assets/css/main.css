@@ -1,0 +1,88 @@
+/* Import zmiennych CSS */
+@import "./variables.css";
+
+/* Reset i podstawowe style */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-family-body);
+	color: var(--color-neutral-dark);
+	background-color: var(--color-neutral-light);
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-heading);
+	line-height: 1.2;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-primary);
+	transition: color var(--transition-fast);
+}
+
+a:hover {
+	color: var(--color-primary-dark);
+}
+
+button {
+	cursor: pointer;
+	font-family: var(--font-family-body);
+}
+
+/* Pomocnicze klasy */
+.text-center {
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+	max-width: var(--container-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--space-4);
+	padding-right: var(--space-4);
+}
+
+.section {
+	padding: var(--space-12) 0;
+}
+
+.accent-text {
+	font-family: var(--font-family-accent);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+	.section {
+		padding: var(--space-8) 0;
+	}
+
+	h1 {
+		font-size: var(--font-size-4xl);
+	}
+
+	h2 {
+		font-size: var(--font-size-2xl);
+	}
+}
+
+/* Animacje */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

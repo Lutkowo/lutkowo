@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Lutkowo - Handcrafted with Passion",
+    "description": "Lutkowo - shop with unique handcrafted products. Discover exceptional ceramic, glass, and macrame items created with passion and attention to every detail."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Lutkowo - Handcrafted with Passion",
+    "subtitle": "Unique items created with love for art and detail",
+    "cta": "Discover our products"
+  },
+  "about": {
+    "title": "About us",
+    "paragraph1": "Lutkowo is a place where every product tells its own story. Our handicrafts are born from the passion for creating unique objects that combine functionality with beauty.",
+    "paragraph2": "Since 2020, we've been creating ceramics, glass and macrame, putting our heart and care for the highest quality into every detail. All products are handmade in our workshop in the heart of Poland.",
+    "cta": "Get to know us better"
+  },
+  "products": {
+    "title": "Our products",
+    "viewDetails": "View details"
+  },
+  "categories": {
+    "title": "Our categories",
+    "ceramics": {
+      "name": "Ceramics",
+      "description": "Handmade items from natural clay from various regions of Poland"
+    },
+    "glass": {
+      "name": "Glass",
+      "description": "Artistic blown glass products"
+    },
+    "macrame": {
+      "name": "Macrame",
+      "description": "Decorative items woven from natural cords"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 Lutkowo. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

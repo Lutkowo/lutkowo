@@ -1,0 +1,99 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Verify PWA manifest
+        run: |
+          if [ -f "public/manifest.json" ]; then
+            echo "Manifest file found"
+            # Sprawdza, czy manifest.json jest poprawnym JSONem
+            cat public/manifest.json | jq . > /dev/null
+            echo "Manifest is valid JSON"
+          else
+            echo "Error: manifest.json not found!"
+            exit 1
+          fi
+
+      - name: Set base URL
+        id: set_base_url
+        run: |
+          if [ "${{ github.event.repository.name }}" = "lutkowo" ]; then
+            echo "BASE_URL=/" >> $GITHUB_ENV
+          else
+            echo "BASE_URL=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+          fi
+
+      - name: Build
+        run: pnpm run generate
+        env:
+          NITRO_PRESET: github_pages
+          NUXT_APP_BASE_URL: ${{ env.BASE_URL }}
+
+      - name: Add .nojekyll file
+        run: touch .output/public/.nojekyll
+
+      - name: Create CNAME file
+        run: |
+          if [ -f "public/CNAME" ]; then
+            cp public/CNAME .output/public/CNAME
+            echo "Using existing CNAME file"
+          else
+            echo "lutkowo.com" > .output/public/CNAME
+            echo "Created CNAME file"
+          fi
+
+      - name: Copy robots.txt and sitemap
+        run: |
+          if [ -f "public/robots.txt" ]; then
+            cp public/robots.txt .output/public/robots.txt
+          fi
+          if [ -f ".output/public/sitemap.xml" ]; then
+            echo "Sitemap generated"
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .output/public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
