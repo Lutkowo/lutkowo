@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap'
   ],
 
+  // Konfiguracja site URL dla całej aplikacji
+  site: {
+    url: 'https://lutkowo.com'
+  },
+
   // Konfiguracja sitemap
   sitemap: {
     hostname: 'https://lutkowo.com',
@@ -120,6 +125,8 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: '/',
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      // Zwiększamy limit rozmiaru plików do cache do 5MB
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
