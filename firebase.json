@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "lutkowo",
     "public": ".output/public",
     "ignore": [
       "firebase.json",
