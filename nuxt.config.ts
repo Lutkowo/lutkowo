@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
   // Konfiguracja sitemap
   sitemap: {
-    hostname: 'https://lutkowo.com',
+    siteUrl: 'https://lutkowo.com', // poprawna opcja zamiast 'hostname'
     gzip: true,
     exclude: [
       '/404'
@@ -38,6 +38,7 @@ export default defineNuxtConfig({
 
   // Konfiguracja SEO
   app: {
+    baseURL: '/', // Wymusza generowanie strony pod https://lutkowo.github.io/
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -125,7 +126,6 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: '/',
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      // Zwiększamy limit rozmiaru plików do cache do 5MB
       maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
       runtimeCaching: [
         {
@@ -168,22 +168,12 @@ export default defineNuxtConfig({
           }
         }
       ],
-      // Dodatkowe ustawienia workbox
       cleanupOutdatedCaches: true,
       skipWaiting: true,
       clientsClaim: true
     },
-    // Dodatkowe konfiguracje PWA
     registerWebManifestInRouteRules: true,
-    // Konfiguracja ikonek PWA
-    includeAssets: ['favicon.ico', 'icons/*.png'],
-    meta: {
-      name: 'Lutkowo - Rękodzieło z pasją',
-      author: 'Lutkowo',
-      theme_color: '#5E9CB2',
-      mobileAppIOS: true,
-      appleStatusBarStyle: 'black-translucent'
-    }
+    includeAssets: ['favicon.ico', 'icons/*.png']
   },
 
   // Konfiguracja obrazów
