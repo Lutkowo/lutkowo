@@ -38,7 +38,6 @@ export default defineNuxtConfig({
 
   // Konfiguracja SEO
   app: {
-    baseURL: '/', // Wymusza generowanie strony pod https://lutkowo.github.io/
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -126,7 +125,7 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: '/',
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
+      maximumFileSizeToCacheInBytes: 5*1024*1024, // 5 MB
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
